@@ -28,5 +28,5 @@ def linemaker(text , max_of_line , max_char_by_line):
             text_final += list_line[i]
         else:
             text_final += list_line[i] + "\n"
-    return text_final
+    return list_line
 print(linemaker("Its fur is the ultimate in luxuriousness. Sleeping alongside a WIGGLYTUFF is simply divine. Its body expands seemingly without end when it inhales.", 4, 44))

@@ -9,6 +9,10 @@ Capitalized_Desc = False # Boolean
 
 Favorite_Gen_For_Desc = 3 
 
+Fav_version = 9
+Fav_version = 14
+Fav_version =
+
 def open_all_csv():
     global pokemon_names
     global item_names
@@ -52,6 +56,38 @@ def open_all_csv():
         for row in reader:
             pokemon_desc.append(row)
         csvfile.close
+
+def linemaker(text , max_of_line , max_char_by_line):
+    textsplit = text.split()
+    list_line = ["" for a in range(max_of_line)]
+    line = 0
+    word = 0
+    end = False
+    valid_line = 0
+    text_final = ''
+    if len(text)/max_char_by_line > max_of_line:
+        print('error')
+        return ''
+    while end == False:
+        if line > max_of_line:
+            print('error')
+            return ''
+        elif word == len(textsplit):
+            end = True
+        elif len(list_line[line]) + len(textsplit[word]) >= max_char_by_line:
+            line += 1
+        else :
+            list_line[line] += textsplit[word] + ' '
+            word += 1
+    for i in range(max_of_line):
+        if list_line[i] != '':
+            valid_line += 1
+    for i in range(valid_line):
+        if i == valid_line - 1: 
+            text_final += list_line[i]
+        else:
+            text_final += list_line[i] + "\n"
+    return list_line
 
 def return_name(txt):
     for i in range(len(txt)):
@@ -244,7 +280,8 @@ for i in range(len(pokedex_desc_file)):
     if pokedex_desc_file[i].find('const u8 g') != -1 :
         start = pokedex_desc_file[i].find('const u8 g') + 10
         name = return_name_for_P_desc(pokedex_desc_file[i][start:len(pokedex_desc_file[i])].replace("'", '’'))
-        if trad_name(name , pokemon_names) != 0:
+        if trad_desc(name , pokemon_names) != 0:
+
             pokedex_desc_file[i] = pokedex_desc_file[i][0:start] + trad_name(name , pokemon_names) + '"),'
         else:
             errorlist.append([name , i , error_code[1]])
