@@ -2296,7 +2296,7 @@ const u8 gKyogrePokedexText[] = _(
     "feuding with GROUDON, it took to sleep at\n"
     "the bottom of the sea.");
 
-const u8 gGroudonPokedexText[] = _(
+const u8 gGroudonPokedexText[] = _( 
     "GROUDON has appeared in mythology as the\n"
     "creator of the land. It sleeps in magma\n"
     "underground and is said to make volcanoes\n"

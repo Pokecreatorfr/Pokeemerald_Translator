@@ -10,8 +10,8 @@ Capitalized_Desc = False # Boolean
 Favorite_Gen_For_Desc = 3 
 
 Fav_version = 9
-Fav_version = 14
-Fav_version =
+Fav_version2 = 14
+Fav_version3 = 22
 
 def open_all_csv():
     global pokemon_names
@@ -280,9 +280,8 @@ for i in range(len(pokedex_desc_file)):
     if pokedex_desc_file[i].find('const u8 g') != -1 :
         start = pokedex_desc_file[i].find('const u8 g') + 10
         name = return_name_for_P_desc(pokedex_desc_file[i][start:len(pokedex_desc_file[i])].replace("'", '’'))
-        if trad_desc(name , pokemon_names) != 0:
-
-            pokedex_desc_file[i] = pokedex_desc_file[i][0:start] + trad_name(name , pokemon_names) + '"),'
+        if trad_desc(name , data_list , pokemon_names, version_id)!= 0:
+        
         else:
             errorlist.append([name , i , error_code[1]])
 fichier = open("pokedex_text_trad.h" , 'w' , encoding="UTF-8")
