@@ -69,7 +69,8 @@ def linemaker(text , max_of_line , max_char_by_line):
         print('error')
         return ''
     while end == False:
-        if line > max_of_line:
+
+        if line == max_of_line:
             print('error')
             return ''
         elif word == len(textsplit):
@@ -83,11 +84,8 @@ def linemaker(text , max_of_line , max_char_by_line):
         if list_line[i] != '':
             valid_line += 1
     for i in range(valid_line):
-        if i == valid_line - 1: 
-            text_final += list_line[i]
-        else:
-            text_final += list_line[i] + "\n"
-    return list_line
+            text_final += '    "' + list_line[i] + '"'+ "\n"
+    return text_final
 
 def return_name(txt):
     for i in range(len(txt)):
@@ -270,6 +268,7 @@ for line in errorlist:
 # Trad Pokedex Texts
 a_file = open("pokedex_text.h" , encoding="UTF-8")
 pokedex_desc_file = []
+pokedex_desc_file_Trad = []
 lines = a_file.readlines()
 for line in lines:
     pokedex_desc_file.append(line)
@@ -280,13 +279,14 @@ for i in range(len(pokedex_desc_file)):
     if pokedex_desc_file[i].find('const u8 g') != -1 :
         start = pokedex_desc_file[i].find('const u8 g') + 10
         name = return_name_for_P_desc(pokedex_desc_file[i][start:len(pokedex_desc_file[i])].replace("'", '’'))
-        if trad_desc(name , data_list , pokemon_names, version_id)!= 0:
-        
+        if trad_desc(name , pokemon_desc , pokemon_names, 24)!= 0:
+            if linemaker(trad_desc(name , pokemon_desc , pokemon_names, 24), 4 , 40) != '':
+                pokedex_desc_file_Trad.append(pokedex_desc_file[i] + linemaker(trad_desc(name , pokemon_desc , pokemon_names, 24), 4 , 40) + ');')
         else:
             errorlist.append([name , i , error_code[1]])
 fichier = open("pokedex_text_trad.h" , 'w' , encoding="UTF-8")
-for line in pokedex_desc_file:
-    fichier.write((line + "\n"))
+for line in pokedex_desc_file_Trad:
+    fichier.write((line + '\n'))
 fichier.close()
 fichier = open("error_pokedex_desc.txt" , 'w' , encoding="UTF-8")
 for line in errorlist:

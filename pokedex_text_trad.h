@@ -1,4261 +1,1934 @@
-const u8 gDummyPokedexText[] = _(
-
-    "This is a newly discovered POKéMON.\n"
-
-    "It is currently under investigation.\n"
-
-    "No detailed information is available\n"
-
-    "at this time.");
-
-
-
-const u8 gBULBIZARRE"),
-    "BULBASAUR can be seen napping in bright\n"
-
-    "sunlight. There is a seed on its back.\n"
-
-    "By soaking up the sun's rays, the seed\n"
-
-    "grows progressively larger.");
-
-
-
-const u8 gHERBIZARRE"),
-    "To support its bulb, IVYSAUR's legs\n"
-
-    "grow sturdy. If it spends more time lying in\n"
-
-    "the sunlight, the bud will soon bloom into\n"
-
-    "a large flower.");
-
-
-
-const u8 gFLORIZARRE"),
-    "VENUSAUR's flower is said to take on vivid\n"
-
-    "colors if it gets plenty of nutrition and\n"
-
-    "sunlight. The flower's aroma soothes the\n"
-
-    "emotions of people.");
-
-
-
-const u8 gSALAMÈCHE"),
-    "The flame that burns at the tip of its\n"
-
-    "tail is an indication of its emotions.\n"
-
-    "The flame wavers when CHARMANDER is\n"
-
-    "happy, and blazes when it is enraged.");
-
-
-
-const u8 gREPTINCEL"),
-    "Without pity, its sharp claws destroy foes.\n"
-
-    "If it encounters a strong enemy, it\n"
-
-    "becomes agitated, and the flame on its\n"
-
-    "tail flares with a bluish white color.");
-
-
-
-const u8 gDRACAUFEU"),
-    "A CHARIZARD flies about in search of\n"
-
-    "strong opponents. It breathes intense\n"
-
-    "flames that can melt any material. However,\n"
-
-    "it will never torch a weaker foe.");
-
-
-
-const u8 gCARAPUCE"),
-    "Its shell is not just for protection.\n"
-
-    "Its rounded shape and the grooves on its\n"
-
-    "surface minimize resistance in water,\n"
-
-    "enabling SQUIRTLE to swim at high speeds.");
-
-
-
-const u8 gCARABAFFE"),
-    "Its large tail is covered with rich, thick\n"
-
-    "fur that deepens in color with age.\n"
-
-    "The scratches on its shell are evidence\n"
-
-    "of this POKéMON's toughness in battle.");
-
-
-
-const u8 gTORTANK"),
-    "The waterspouts that protrude from its\n"
-
-    "shell are highly accurate. Their bullets of\n"
-
-    "water can precisely nail tin cans from\n"
-
-    "a distance of over 160 feet.");
-
-
-
-const u8 gCHENIPAN"),
-    "Its voracious appetite compels it to\n"
-
-    "devour leaves bigger than itself without\n"
-
-    "hesitation. It releases a terribly strong\n"
-
-    "odor from its antennae.");
-
-
-
-const u8 gCHRYSACIER"),
-    "Its shell is as hard as an iron slab.\n"
-
-    "A METAPOD does not move very much\n"
-
-    "because it is preparing its soft innards\n"
-
-    "for evolution inside the shell.");
-
-
-
-const u8 gPAPILUSION"),
-    "It has a superior ability to search for\n"
-
-    "delicious honey from flowers. It can seek,\n"
-
-    "extract, and carry honey from flowers\n"
-
-    "blooming over six miles away.");
-
-
-
-const u8 gASPICOT"),
-    "A WEEDLE has an extremely acute sense\n"
-
-    "of smell. It distinguishes its favorite\n"
-
-    "kinds of leaves from those it dislikes by\n"
-
-    "sniffing with its big red proboscis (nose).");
-
-
-
-const u8 gCOCONFORT"),
-    "It remains virtually immobile while it\n"
-
-    "clings to a tree. However, on the inside,\n"
-
-    "it busily prepares for evolution. This is\n"
-
-    "evident from how hot its shell becomes.");
-
-
-
-const u8 gDARDARGNAN"),
-    "A BEEDRILL is extremely territorial.\n"
-
-    "For safety reasons, no one should \n"
-
-    "ever approach its nest. If angered,\n"
-
-    "they will attack in a swarm.");
-
-
-
-const u8 gROUCOOL"),
-    "It has an extremely sharp sense of\n"
-
-    "direction. It can unerringly return home to\n"
-
-    "its nest, however far it may be removed\n"
-
-    "from its familiar surroundings.");
-
-
-
-const u8 gROUCOUPS"),
-    "This POKéMON flies around, patrolling its\n"
-
-    "large territory. If its living space is\n"
-
-    "violated, it shows no mercy in thoroughly\n"
-
-    "punishing the foe with its sharp claws.");
-
-
-
-const u8 gROUCARNAGE"),
-    "This POKéMON has gorgeous, glossy\n"
-
-    "feathers. Many TRAINERS are so captivated\n"
-
-    "by the beautiful feathers on its head that\n"
-
-    "they choose PIDGEOT as their POKéMON.");
-
-
-
-const u8 gRATTATA"),
-    "A RATTATA is cautious in the extreme.\n"
-
-    "Even while it is asleep, it constantly\n"
-
-    "moves its ears and listens for danger.\n"
-
-    "It will make its nest anywhere.");
-
-
-
-const u8 gRATTATAC"),
-    "A RATICATE's sturdy fangs grow steadily.\n"
-
-    "To keep them ground down, it gnaws on\n"
-
-    "rocks and logs. It may even chew on the\n"
-
-    "walls of houses.");
-
-
-
-const u8 gPIAFABEC"),
-    "Its loud cry can be heard over half a mile\n"
-
-    "away. If its high, keening cry is heard\n"
-
-    "echoing all around, it is a sign that they\n"
-
-    "are warning each other of danger.");
-
-
-
-const u8 gRAPASDEPIC"),
-    "Its long neck and elongated beak are\n"
-
-    "ideal for catching prey in soil or water.\n"
-
-    "It deftly moves this extended and skinny\n"
-
-    "beak to pluck prey.");
-
-
-
-const u8 gABO"),
-    "An EKANS curls itself up in a spiral while\n"
-
-    "it rests. This position allows it to quickly\n"
-
-    "respond to an enemy from any direction\n"
-
-    "with a threat from its upraised head.");
-
-
-
-const u8 gARBOK"),
-    "This POKéMON has a terrifically strong\n"
-
-    "constricting power. It can even flatten\n"
-
-    "steel oil drums. Once it wraps its body\n"
-
-    "around its foe, escaping is impossible.");
-
-
-
-const u8 gPIKACHU"),
-    "It stores electricity in the electric sacs\n"
-
-    "on its cheeks. When it releases pent-up\n"
-
-    "energy in a burst, the electric power is\n"
-
-    "equal to a lightning bolt.");
-
-
-
-const u8 gRAICHU"),
-    "If it stores too much electricity, its\n"
-
-    "behavior turns aggressive. To avoid this,\n"
-
-    "it occasionally discharges excess energy\n"
-
-    "and calms itself down.");
-
-
-
-const u8 gSABELETTE"),
-    "When it curls up in a ball, it can make any\n"
-
-    "attack bounce off harmlessly. Its hide has\n"
-
-    "turned tough and solid as a result of\n"
-
-    "living in the desert.");
-
-
-
-const u8 gSABLAIREAU"),
-    "It curls up in a ball to protect itself from\n"
-
-    "enemy attacks. It also curls up to prevent\n"
-
-    "heatstroke during the daytime when\n"
-
-    "temperatures rise sharply.");
-
-
-
-const u8 gNidoranFPokedexText[] = _(
-
-    "Its highly toxic barbs are thought to have\n"
-
-    "developed as protection for this small-\n"
-
-    "bodied POKéMON. When enraged, it releases\n"
-
-    "a horrible toxin from its horn.");
-
-
-
-const u8 gNIDORINA"),
-    "When it is with its friends or\n"
-
-    "family, its barbs are tucked away to\n"
-
-    "prevent injury. It appears to become\n"
-
-    "nervous if separated from the others.");
-
-
-
-const u8 gNIDOQUEEN"),
-    "It is adept at sending foes flying with\n"
-
-    "harsh tackles using its tough, scaly body.\n"
-
-    "This POKéMON is at its strongest when\n"
-
-    "it is defending its young.");
-
-
-
-const u8 gNidoranMPokedexText[] = _(
-
-    "The male NIDORAN has developed muscles\n"
-
-    "that freely move its ears in any direction.\n"
-
-    "Even the slightest sound does not escape\n"
-
-    "this POKéMON's notice.");
-
-
-
-const u8 gNIDORINO"),
-    "Its horn is harder than a diamond.\n"
-
-    "If it senses a hostile presence, all the\n"
-
-    "barbs on its back bristle up at once, and it\n"
-
-    "challenges the foe with all its might.");
-
-
-
-const u8 gNIDOKING"),
-    "A NIDOKING's thick tail packs enormously\n"
-
-    "destructive power capable of toppling\n"
-
-    "a metal transmission tower. Once it goes\n"
-
-    "on a rampage, there is no stopping it.");
-
-
-
-const u8 gMÉLOFÉE"),
-    "On every night of a full moon, they come\n"
-
-    "out to play. When dawn arrives, the tired\n"
-
-    "CLEFAIRY go to sleep nestled up against\n"
-
-    "each other in deep and quiet mountains.");
-
-
-
-const u8 gMÉLODELFE"),
-    "A CLEFABLE uses its wings to skip lightly \n"
-
-    "as if it were flying. Its bouncy step\n"
-
-    "lets it even walk on water. On quiet,\n"
-
-    "moonlit nights, it strolls on lakes.");
-
-
-
-const u8 gGOUPIX"),
-    "It can freely control fire, making fiery\n"
-
-    "orbs fly like will-o'-the-wisps. Just\n"
-
-    "before evolution, its six tails grow hot \n"
-
-    "as if on fire.");
-
-
-
-const u8 gFEUNARD"),
-    "It has long been said that each of the\n"
-
-    "nine tails embody an enchanted power.\n"
-
-    "A long-lived NINETALES will have fur that\n"
-
-    "shines like gold.");
-
-
-
-const u8 gRONDOUDOU"),
-    "Nothing can avoid falling asleep hearing a\n"
-
-    "JIGGLYPUFF's song. The sound waves of its\n"
-
-    "singing voice match the brain waves of\n"
-
-    "someone in a deep sleep.");
-
-
-
-const u8 gGRODOUDOU"),
-    "Its fur is the ultimate in luxuriousness.\n"
-
-    "Sleeping alongside a WIGGLYTUFF is simply\n"
-
-    "divine. Its body expands seemingly without\n"
-
-    "end when it inhales.");
-
-
-
-const u8 gNOSFERAPTI"),
-    "While living in pitch-black caverns, their\n"
-
-    "eyes gradually grew shut and deprived\n"
-
-    "them of vision. They use ultrasonic waves\n"
-
-    "to detect obstacles.");
-
-
-
-const u8 gNOSFERALTO"),
-    "Its fangs easily puncture even thick\n"
-
-    "animal hide. It loves to feast on the blood\n"
-
-    "of people and POKéMON. It flits about in\n"
-
-    "darkness and strikes from behind.");
-
-
-
-const u8 gMYSTHERBE"),
-    "This POKéMON grows by absorbing moonlight.\n"
-
-    "During the daytime, it buries itself in the\n"
-
-    "ground, leaving only its leaves exposed to\n"
-
-    "avoid detection by its enemies.");
-
-
-
-const u8 gORTIDE"),
-    "A horribly noxious honey drools from its\n"
-
-    "mouth. One whiff of the honey can result\n"
-
-    "in memory loss. Some fans are said to\n"
-
-    "enjoy this overwhelming stink, however.");
-
-
-
-const u8 gRAFFLESIA"),
-    "In seasons when it produces more pollen,\n"
-
-    "the air around a VILEPLUME turns yellow\n"
-
-    "with the powder as it walks. The pollen is\n"
-
-    "highly toxic and causes paralysis.");
-
-
-
-const u8 gPARAS"),
-    "A PARAS has parasitic tochukaso\n"
-
-    "mushrooms growing on its back. They grow\n"
-
-    "by drawing nutrients from the host. They\n"
-
-    "are valued as a medicine for long life.");
-
-
-
-const u8 gPARASECT"),
-    "PARASECT are known to infest the roots of\n"
-
-    "large trees en masse and drain nutrients.\n"
-
-    "When an infested tree dies, they move\n"
-
-    "onto another tree all at once.");
-
-
-
-const u8 gMIMITOSS"),
-    "Its coat of thin, stiff hair that covers\n"
-
-    "its entire body is said to have evolved\n"
-
-    "for protection. Its large eyes never fail\n"
-
-    "to spot even miniscule prey.");
-
-
-
-const u8 gAÉROMITE"),
-    "VENOMOTH are nocturnal--they only are\n"
-
-    "active at night. Their favorite prey are\n"
-
-    "insects that gather around streetlights,\n"
-
-    "attracted by the light in the darkness.");
-
-
-
-const u8 gTAUPIQUEUR"),
-    "DIGLETT are raised in most farms.\n"
-
-    "The reason is simple--wherever they\n"
-
-    "burrow, the soil is left perfectly tilled\n"
-
-    "for growing delicious crops.");
-
-
-
-const u8 gTRIOPIKEUR"),
-    "Because the triplets originally split from\n"
-
-    "one body, they think exactly alike.\n"
-
-    "They work cooperatively to burrow\n"
-
-    "endlessly through the ground.");
-
-
-
-const u8 gMIAOUSS"),
-    "MEOWTH withdraw their sharp claws into\n"
-
-    "their paws to silently sneak about.\n"
-
-    "For some reason, this POKéMON loves\n"
-
-    "shiny coins that glitter with light.");
-
-
-
-const u8 gPERSIAN"),
-    "A PERSIAN's six bold whiskers sense air\n"
-
-    "movements to determine what is in its\n"
-
-    "vicinity. It becomes docile if grabbed\n"
-
-    "by the whiskers.");
-
-
-
-const u8 gPSYKOKWAK"),
-    "When its headache intensifies, it starts\n"
-
-    "using strange powers. However, it has no\n"
-
-    "recollection of its powers, so it always\n"
-
-    "looks befuddled and bewildered.");
-
-
-
-const u8 gAKWAKWAK"),
-    "A GOLDUCK is an adept swimmer.\n"
-
-    "It sometimes joins competitive swimmers\n"
-
-    "in training. It uses psychic powers when\n"
-
-    "its forehead shimmers with light.");
-
-
-
-const u8 gFÉROSINGE"),
-    "When it starts shaking and its nasal\n"
-
-    "breathing turns rough, it's a sure sign\n"
-
-    "of anger. However, since this happens\n"
-
-    "instantly, there is no time to flee.");
-
-
-
-const u8 gCOLOSSINGE"),
-    "When it becomes furious, its blood\n"
-
-    "circulation becomes more robust, and\n"
-
-    "its muscles are made stronger. But it\n"
-
-    "also becomes much less intelligent.");
-
-
-
-const u8 gCANINOS"),
-    "Its superb sense of smell ensures that\n"
-
-    "this POKéMON won't forget any scent,\n"
-
-    "no matter what. It uses its sense of smell\n"
-
-    "to detect the emotions of others.");
-
-
-
-const u8 gARCANIN"),
-    "This fleet-footed POKéMON is said to run\n"
-
-    "over 6,200 miles in a single day and night.\n"
-
-    "The fire that blazes wildly within its body\n"
-
-    "is its source of power.");
-
-
-
-const u8 gPTITARD"),
-    "It is possible to see this POKéMON's spiral\n"
-
-    "innards right through its thin skin.\n"
-
-    "However, the skin is also very flexible.\n"
-
-    "Even sharp fangs bounce right off it.");
-
-
-
-const u8 gTÊTARTE"),
-    "Its body surface is always wet and slick\n"
-
-    "with an oily fluid. Because of this greasy\n"
-
-    "covering, it can easily slip and slide out\n"
-
-    "of the clutches of any enemy in battle.");
-
-
-
-const u8 gTARTARD"),
-    "Its highly developed muscles never grow\n"
-
-    "fatigued, however much it exercises.\n"
-
-    "This POKéMON can swim back and forth\n"
-
-    "across the Pacific Ocean without effort.");
-
-
-
-const u8 gABRA"),
-    "A POKéMON that sleeps 18 hours a day.\n"
-
-    "Observation revealed that it uses\n"
-
-    "TELEPORT to change its location once\n"
-
-    "every hour.");
-
-
-
-const u8 gKADABRA"),
-    "It is rumored that a boy with psychic\n"
-
-    "abilities suddenly transformed into\n"
-
-    "KADABRA while he was assisting research\n"
-
-    "into extrasensory powers.");
-
-
-
-const u8 gALAKAZAM"),
-    "While it has strong psychic abilities and\n"
-
-    "high intelligence, an ALAKAZAM's muscles\n"
-
-    "are very weak. It uses psychic power to\n"
-
-    "move its body.");
-
-
-
-const u8 gMACHOC"),
-    "It continually undertakes strenuous\n"
-
-    "training to master all forms of martial\n"
-
-    "arts. Its strength lets it easily hoist\n"
-
-    "a sumo wrestler onto its shoulders.");
-
-
-
-const u8 gMACHOPEUR"),
-    "A belt is worn by a MACHOKE to keep its\n"
-
-    "overwhelming power under control.\n"
-
-    "Because it is so dangerous, no one has\n"
-
-    "ever removed the belt.");
-
-
-
-const u8 gMACKOGNEUR"),
-    "It is impossible to defend against punches\n"
-
-    "and chops doled out by its four arms.\n"
-
-    "Its fighting spirit flares up when it faces\n"
-
-    "a tough opponent.");
-
-
-
-const u8 gCHÉTIFLOR"),
-    "A BELLSPROUT's thin and flexible body lets\n"
-
-    "it bend and sway to avoid any attack,\n"
-
-    "however strong it may be. From its mouth,\n"
-
-    "it leaks a fluid that melts even iron.");
-
-
-
-const u8 gBOUSTIFLOR"),
-    "At night, a WEEPINBELL hangs on to a tree\n"
-
-    "branch with its hooked rear and sleeps.\n"
-
-    "If it moves around in its sleep, it may\n"
-
-    "wake up to find itself on the ground.");
-
-
-
-const u8 gEMPIFLOR"),
-    "The long vine extending from its head is\n"
-
-    "waved about as if it were a living thing to\n"
-
-    "attract prey. When an unsuspecting victim\n"
-
-    "approaches, it is swallowed whole.");
-
-
-
-const u8 gTENTACOOL"),
-    "Its body is almost entirely composed of\n"
-
-    "water. It ensnares its foe with its two\n"
-
-    "long tentacles, then stabs with the poison\n"
-
-    "stingers at their tips.");
-
-
-
-const u8 gTENTACRUEL"),
-    "It lives in complex rock formations on\n"
-
-    "the ocean floor and traps prey using its\n"
-
-    "80 tentacles. Its red orbs glow when it\n"
-
-    "grows excited or agitated.");
-
-
-
-const u8 gRACAILLOU"),
-    "It climbs mountain paths using only the\n"
-
-    "power of its arms. Because they look just\n"
-
-    "like boulders lining paths, hikers may step\n"
-
-    "on them without noticing.");
-
-
-
-const u8 gGRAVALANCH"),
-    "They descend from mountains by tumbling\n"
-
-    "down steep slopes. They are so brutal,\n"
-
-    "they smash aside obstructing trees and\n"
-
-    "massive boulders with thunderous tackles.");
-
-
-
-const u8 gGROLEM"),
-    "It is said to live in volcanic craters\n"
-
-    "on mountain peaks. Once a year, it sheds\n"
-
-    "its hide and grows larger. The shed hide\n"
-
-    "crumbles and returns to the soil.");
-
-
-
-const u8 gPONYTA"),
-    "A PONYTA is very weak at birth. It can\n"
-
-    "barely stand up. Its legs become stronger\n"
-
-    "as it stumbles and falls while trying to\n"
-
-    "keep up with its parent.");
-
-
-
-const u8 gGALOPA"),
-    "It usually canters casually in the fields\n"
-
-    "and plains. But once a RAPIDASH turns\n"
-
-    "serious, its fiery manes flare and blaze\n"
-
-    "as it gallops its way up to 150 mph.");
-
-
-
-const u8 gRAMOLOSS"),
-    "It catches prey by dipping its tail in\n"
-
-    "water at the side of a river. But it often\n"
-
-    "forgets what it is doing and spends entire\n"
-
-    "days just loafing at water's edge.");
-
-
-
-const u8 gFLAGADOSS"),
-    "Its tail has a SHELLDER firmly attached\n"
-
-    "with a bite. As a result, the tail can't be\n"
-
-    "used for fishing anymore. This forces it\n"
-
-    "to reluctantly swim and catch prey.");
-
-
-
-const u8 gMAGNÉTI"),
-    "The units at its sides are extremely\n"
-
-    "powerful magnets. They generate enough\n"
-
-    "magnetism to draw in iron objects from\n"
-
-    "over 300 feet away.");
-
-
-
-const u8 gMAGNÉTON"),
-    "It is actually three MAGNEMITE linked\n"
-
-    "by magnetism. It generates powerful radio\n"
-
-    "waves that raise temperatures by 3.6\n"
-
-    "degrees F within a 3,300-foot radius.");
-
-
-
-const u8 gFarfetchdPokedexText[] = _(
-
-    "It is always seen with a stick from a plant.\n"
-
-    "Apparently, there are good sticks and bad\n"
-
-    "sticks. This POKéMON occasionally fights\n"
-
-    "with others over choice sticks.");
-
-
-
-const u8 gDODUO"),
-    "Even while eating or sleeping, one of the\n"
-
-    "heads remains always vigilant for any sign\n"
-
-    "of danger. When threatened, it flees at\n"
-
-    "over 60 miles per hour.");
-
-
-
-const u8 gDODRIO"),
-    "A peculiar POKéMON species with three\n"
-
-    "heads. It vigorously races across grassy\n"
-
-    "plains even in arid seasons with little\n"
-
-    "rainfall.");
-
-
-
-const u8 gOTARIA"),
-    "SEEL hunt for prey in frigid, ice-covered\n"
-
-    "seas. When it needs to breathe, it punches\n"
-
-    "a hole through the ice with the sharply\n"
-
-    "protruding section of its head.");
-
-
-
-const u8 gLAMANTINE"),
-    "It loves to snooze on bitterly cold ice.\n"
-
-    "The sight of this POKéMON sleeping on\n"
-
-    "a glacier was mistakenly thought to be\n"
-
-    "a mermaid by a mariner long ago.");
-
-
-
-const u8 gTADMORV"),
-    "Born from polluted sludge in the sea,\n"
-
-    "GRIMER's favorite food is anything filthy.\n"
-
-    "They feed on wastewater pumped out from\n"
-
-    "factories.");
-
-
-
-const u8 gGROTADMORV"),
-    "It prefers warm and humid habitats.\n"
-
-    "In the summertime, the toxic substances\n"
-
-    "in its body intensify, making MUK reek like\n"
-
-    "putrid kitchen garbage.");
-
-
-
-const u8 gKOKIYAS"),
-    "At night, it burrows a hole in the seafloor\n"
-
-    "with its broad tongue to make a place to\n"
-
-    "sleep. While asleep, it closes its shell,\n"
-
-    "but leaves its tongue hanging out.");
-
-
-
-const u8 gCRUSTABRI"),
-    "It swims in the sea by swallowing water,\n"
-
-    "then jetting it out toward the rear.\n"
-
-    "The CLOYSTER shoots spikes from its\n"
-
-    "shell using the same system.");
-
-
-
-const u8 gFANTOMINUS"),
-    "When exposed to a strong wind, a GASTLY's\n"
-
-    "gaseous body quickly dwindles away.\n"
-
-    "They cluster under the eaves of houses\n"
-
-    "to escape the ravages of wind.");
-
-
-
-const u8 gSPECTRUM"),
-    "If a HAUNTER beckons you while it is\n"
-
-    "floating in darkness, don't approach it.\n"
-
-    "This POKéMON will try to lick you with its\n"
-
-    "tongue and steal your life away.");
-
-
-
-const u8 gECTOPLASMA"),
-    "Deep in the night, your shadow cast by\n"
-
-    "a streetlight may suddenly overtake you.\n"
-
-    "It is actually a GENGAR running past\n"
-
-    "you, pretending to be your shadow.");
-
-
-
-const u8 gONIX"),
-    "There is a magnet in its brain that\n"
-
-    "prevents an ONIX from losing direction\n"
-
-    "while tunneling. As it grows older, its body\n"
-
-    "becomes steadily rounder and smoother.");
-
-
-
-const u8 gSOPORIFIK"),
-    "If your nose becomes itchy while you are\n"
-
-    "sleeping, it's a sure sign that a DROWZEE is\n"
-
-    "standing above your pillow and trying to\n"
-
-    "eat your dream through your nostrils.");
-
-
-
-const u8 gHYPNOMADE"),
-    "The arcing movement and glitter of the\n"
-
-    "pendulum in a HYPNO's hand lull the foe\n"
-
-    "into deep hypnosis. While searching for\n"
-
-    "prey, it polishes the pendulum.");
-
-
-
-const u8 gKRABBY"),
-    "KRABBY live in holes dug into beaches.\n"
-
-    "On sandy shores with little in the way\n"
-
-    "of food, they can be seen squabbling with\n"
-
-    "each other over territory.");
-
-
-
-const u8 gKRABBOSS"),
-    "It waves its huge, oversized claw in the\n"
-
-    "air to communicate with others.\n"
-
-    "But since the claw is so heavy, this\n"
-
-    "POKéMON quickly tires.");
-
-
-
-const u8 gVOLTORBE"),
-    "It bears an uncanny and unexplained\n"
-
-    "resemblance to a POKé BALL. Because it\n"
-
-    "explodes at the slightest shock, even\n"
-
-    "veteran TRAINERS treat it with caution.");
-
-
-
-const u8 gÉLECTRODE"),
-    "They appear in great numbers at electric\n"
-
-    "power plants. Because they feed on\n"
-
-    "electricity, they cause massive and\n"
-
-    "chaotic blackouts in nearby cities.");
-
-
-
-const u8 gNOEUNOEUF"),
-    "It consists of six eggs that care for each\n"
-
-    "other. The eggs attract each other and\n"
-
-    "spin around. When cracks increasingly\n"
-
-    "appear, it is close to evolution.");
-
-
-
-const u8 gNOADKOKO"),
-    "Originally from the tropics, EXEGGUTOR's\n"
-
-    "heads grow larger from exposure to strong\n"
-
-    "sunlight. It is said that when the heads\n"
-
-    "fall, they group to form an EXEGGCUTE.");
-
-
-
-const u8 gOSSELAIT"),
-    "It pines for the mother it will never see\n"
-
-    "again. Seeing a likeness of its mother in\n"
-
-    "the full moon, it cries. The stains on the\n"
-
-    "skull it wears are from its tears.");
-
-
-
-const u8 gOSSATUEUR"),
-    "A MAROWAK is the evolved form of a CUBONE\n"
-
-    "that has grown tough by overcoming the\n"
-
-    "grief of losing its mother. Its tempered\n"
-
-    "and hardened spirit is not easily broken.");
-
-
-
-const u8 gKICKLEE"),
-    "Its legs freely stretch and contract.\n"
-
-    "Using these springlike limbs, it bowls over\n"
-
-    "foes with devastating kicks. After battle,\n"
-
-    "it rubs down its tired legs.");
-
-
-
-const u8 gTYGNON"),
-    "A HITMONCHAN is said to possess the\n"
-
-    "spirit of a boxer who aimed to become the\n"
-
-    "world champion. Having an indomitable\n"
-
-    "spirit means that it will never give up.");
-
-
-
-const u8 gEXCELANGUE"),
-    "Whenever it sees something unfamiliar,\n"
-
-    "it always licks the object because it\n"
-
-    "memorizes things by texture and taste.\n"
-
-    "It is somewhat put off by sour things.");
-
-
-
-const u8 gSMOGO"),
-    "Getting up close to a KOFFING will give\n"
-
-    "you a chance to observe, through its thin\n"
-
-    "skin, the toxic gases swirling inside. It\n"
-
-    "blows up at the slightest stimulation.");
-
-
-
-const u8 gSMOGOGO"),
-    "By diluting its toxic gases with a special\n"
-
-    "process, the highest grade of perfume can\n"
-
-    "be extracted. To WEEZING, gases emanating\n"
-
-    "from garbage are the ultimate feast.");
-
-
-
-const u8 gRHINOCORNE"),
-    "Once it starts running, it doesn't stop.\n"
-
-    "Its tiny brain makes it so stupid that it\n"
-
-    "can't remember why it started running in\n"
-
-    "the first place.");
-
-
-
-const u8 gRHINOFÉROS"),
-    "Its horn, which rotates like a drill,\n"
-
-    "destroys tall buildings with one strike.\n"
-
-    "It stands on its hind legs, and its brain\n"
-
-    "is well developed.");
-
-
-
-const u8 gLEVEINARD"),
-    "CHANSEY lay nutritionally excellent eggs\n"
-
-    "every day. The eggs are so delicious, they\n"
-
-    "are eagerly devoured by even those people\n"
-
-    "who have lost their appetite.");
-
-
-
-const u8 gSAQUEDENEU"),
-    "Its vines snap off easily and painlessly\n"
-
-    "if they are grabbed, allowing it to make a\n"
-
-    "quick getaway. The lost vines are replaced\n"
-
-    "by new growth the very next day.");
-
-
-
-const u8 gKANGOUREX"),
-    "If you come across a young KANGASKHAN\n"
-
-    "playing by itself, never try to catch it.\n"
-
-    "The baby's parent is sure to be in the area,\n"
-
-    "and it will become violently enraged.");
-
-
-
-const u8 gHYPOTREMPE"),
-    "By cleverly flicking the fins on its back\n"
-
-    "side to side, it moves in any direction\n"
-
-    "while facing forward. It spits ink to\n"
-
-    "escape if it senses danger.");
-
-
-
-const u8 gHYPOCÉAN"),
-    "The poisonous barbs all over its body are\n"
-
-    "highly valued as ingredients for making\n"
-
-    "traditional herbal medicine. It shows no\n"
-
-    "mercy to anything approaching its nest.");
-
-
-
-const u8 gPOISSIRÈNE"),
-    "In the springtime, schools of GOLDEEN\n"
-
-    "can be seen swimming up falls and rivers.\n"
-
-    "It metes out staggering damage with its\n"
-
-    "single horn.");
-
-
-
-const u8 gPOISSOROY"),
-    "It punches holes in boulders on stream-\n"
-
-    "beds. This is a clever innovation that\n"
-
-    "prevents its eggs from being attacked or\n"
-
-    "washed away by the current.");
-
-
-
-const u8 gSTARI"),
-    "It gathers with others in the night and\n"
-
-    "makes its red core glow on and off with\n"
-
-    "the twinkling stars. It can regenerate\n"
-
-    "limbs if they are severed from its body.");
-
-
-
-const u8 gSTAROSS"),
-    "People in ancient times imagined that\n"
-
-    "STARMIE were transformed from the\n"
-
-    "reflections of stars that twinkled on\n"
-
-    "gentle waves at night.");
-
-
-
-const u8 gMrmimePokedexText[] = _(
-
-    "A MR. MIME is a master of pantomime. It can\n"
-
-    "convince others that something unseeable\n"
-
-    "actually exists. Once believed, the\n"
-
-    "imaginary object does become real.");
-
-
-
-const u8 gINSÉCATEUR"),
-    "Its blindingly fast speed adds to the\n"
-
-    "sharpness of its twin forearm scythes.\n"
-
-    "The scythes can slice through thick logs\n"
-
-    "in one wicked stroke.");
-
-
-
-const u8 gLIPPOUTOU"),
-    "A JYNX sashays rhythmically as if it were\n"
-
-    "dancing. Its motions are so bouncingly\n"
-
-    "alluring, people seeing it are compelled to\n"
-
-    "shake their hips without noticing.");
-
-
-
-const u8 gÉLEKTEK"),
-    "When a storm approaches, it competes with\n"
-
-    "others to scale heights that are likely to\n"
-
-    "be stricken by lightning. Some towns use\n"
-
-    "ELECTABUZZ in place of lightning rods.");
-
-
-
-const u8 gMAGMAR"),
-    "In battle, it blows out intense flames from\n"
-
-    "all over its body to intimidate its foe.\n"
-
-    "These fiery bursts create heat waves that\n"
-
-    "ignite grass and trees in the area.");
-
-
-
-const u8 gSCARABRUTE"),
-    "Their pincers are strong enough to\n"
-
-    "shatter thick logs. Because they dislike\n"
-
-    "cold, PINSIR burrow and sleep under\n"
-
-    "the ground on chilly nights.");
-
-
-
-const u8 gTAUROS"),
-    "It is not satisfied unless it is rampaging\n"
-
-    "at all times. If there is no opponent for\n"
-
-    "TAUROS to battle, it will charge at thick\n"
-
-    "trees and knock them down to calm itself.");
-
-
-
-const u8 gMAGICARPE"),
-    "Its swimming muscles are weak, so it is\n"
-
-    "easily washed away by currents. In places\n"
-
-    "where water pools, you can see many\n"
-
-    "MAGIKARP deposited there by the flow.");
-
-
-
-const u8 gLÉVIATOR"),
-    "It is an extremely vicious and violent\n"
-
-    "POKéMON. When humans begin to fight,\n"
-
-    "it will appear and burn everything to the\n"
-
-    "ground with intensely hot flames.");
-
-
-
-const u8 gLOKHLASS"),
-    "People have driven LAPRAS almost to the\n"
-
-    "point of extinction. In the evenings,\n"
-
-    "it is said to sing plaintively as it seeks\n"
-
-    "what few others of its kind still remain.");
-
-
-
-const u8 gMÉTAMORPH"),
-    "A DITTO rearranges its cell structure to\n"
-
-    "transform itself. However, if it tries to\n"
-
-    "change based on its memory, it will get\n"
-
-    "details wrong.");
-
-
-
-const u8 gÉVOLI"),
-    "An EEVEE has an unstable genetic makeup\n"
-
-    "that suddenly mutates due to its\n"
-
-    "environment. Radiation from various\n"
-
-    "STONES causes this POKéMON to evolve.");
-
-
-
-const u8 gAQUALI"),
-    "VAPOREON underwent a spontaneous\n"
-
-    "mutation and grew fins and gills that\n"
-
-    "allow them to live underwater. They have\n"
-
-    "the ability to freely control water.");
-
-
-
-const u8 gVOLTALI"),
-    "Its cells generate weak power that is\n"
-
-    "amplified by its fur's static electricity\n"
-
-    "to drop thunderbolts. The bristling fur is\n"
-
-    "made of electrically charged needles.");
-
-
-
-const u8 gPYROLI"),
-    "FLAREON's fluffy fur releases heat into\n"
-
-    "the air so that its body does not get\n"
-
-    "excessively hot. Its body temperature can\n"
-
-    "rise to a maximum of 1,650 degrees F.");
-
-
-
-const u8 gPORYGON"),
-    "It is capable of reverting itself entirely\n"
-
-    "back to program data in order to enter\n"
-
-    "cyberspace. A PORYGON is copy-\n"
-
-    "protected so it cannot be duplicated.");
-
-
-
-const u8 gAMONITA"),
-    "One of the ancient and long-since-extinct\n"
-
-    "POKéMON that have been regenerated\n"
-
-    "from fossils by humans. If attacked,\n"
-
-    "it withdraws into its hard shell.");
-
-
-
-const u8 gAMONISTAR"),
-    "An OMASTAR uses its tentacles to capture\n"
-
-    "its prey. It is believed to have become\n"
-
-    "extinct because its shell grew too large,\n"
-
-    "making its movements slow and ponderous.");
-
-
-
-const u8 gKABUTO"),
-    "It is a POKéMON that has been regenerated\n"
-
-    "from a fossil. However, in rare cases, living\n"
-
-    "examples have been discovered. KABUTO\n"
-
-    "have not changed for 300 million years.");
-
-
-
-const u8 gKABUTOPS"),
-    "KABUTOPS once swam underwater to hunt \n"
-
-    "for prey. It was apparently evolving from\n"
-
-    "being a water dweller to living on land as\n"
-
-    "evident from changes in its gills and legs.");
-
-
-
-const u8 gPTÉRA"),
-    "AERODACTYL is a POKéMON from the age\n"
-
-    "of dinosaurs. It was regenerated from DNA\n"
-
-    "extracted from amber. It is imagined to\n"
-
-    "have been the king of the skies.");
-
-
-
-const u8 gRONFLEX"),
-    "SNORLAX's typical day consists of nothing\n"
-
-    "more than eating and sleeping. It is such\n"
-
-    "a docile POKéMON that there are children\n"
-
-    "who use its big belly as a place to play.");
-
-
-
-const u8 gARTIKODIN"),
-    "ARTICUNO is a legendary bird POKéMON that\n"
-
-    "can control ice. The flapping of its wings\n"
-
-    "chills the air. As a result, it is said that\n"
-
-    "when this POKéMON flies, snow will fall.");
-
-
-
-const u8 gÉLECTHOR"),
-    "ZAPDOS is a legendary bird POKéMON that\n"
-
-    "has the ability to control electricity.\n"
-
-    "It usually lives in thunderclouds. It gains\n"
-
-    "power if it is stricken by lightning bolts.");
-
-
-
-const u8 gSULFURA"),
-    "MOLTRES is a legendary bird POKéMON\n"
-
-    "that can control fire. If injured, it is said\n"
-
-    "to dip its body in the molten magma of\n"
-
-    "a volcano to burn and heal itself.");
-
-
-
-const u8 gMINIDRACO"),
-    "A DRATINI continually molts and sloughs\n"
-
-    "off its old skin. It does so because the\n"
-
-    "life energy within its body steadily builds\n"
-
-    "to reach uncontrollable levels.");
-
-
-
-const u8 gDRACO"),
-    "A DRAGONAIR stores an enormous amount of\n"
-
-    "energy inside its body. It is said to alter\n"
-
-    "the weather around it by loosing energy\n"
-
-    "from the crystals on its neck and tail.");
-
-
-
-const u8 gDRACOLOSSE"),
-    "It can circle the globe in just 16 hours.\n"
-
-    "It is a kindhearted POKéMON that leads\n"
-
-    "lost and foundering ships in a storm\n"
-
-    "to the safety of land.");
-
-
-
-const u8 gMEWTWO"),
-    "A POKéMON that was created by genetic\n"
-
-    "manipulation. However, even though the\n"
-
-    "scientific power of humans made its body,\n"
-
-    "they failed to give it a warm heart.");
-
-
-
-const u8 gMEW"),
-    "A MEW is said to possess the genes of all\n"
-
-    "POKéMON. It is capable of making itself\n"
-
-    "invisible at will, so it entirely avoids\n"
-
-    "notice even if it approaches people.");
-
-
-
-const u8 gGERMIGNON"),
-    "It waves its leaf around to keep foes\n"
-
-    "at bay. However, a sweet fragrance also\n"
-
-    "wafts from the leaf, creating a friendly\n"
-
-    "atmosphere that becalms the battlers.");
-
-
-
-const u8 gMACRONIUM"),
-    "A BAYLEEF's neck is ringed by curled-up\n"
-
-    "leaves. Inside each leaf is a small tree\n"
-
-    "shoot. The fragrance of this shoot\n"
-
-    "makes people peppy.");
-
-
-
-const u8 gMÉGANIUM"),
-    "The fragrance of a MEGANIUM's flower\n"
-
-    "soothes and calms emotions. In battle,\n"
-
-    "it gives off more of its becalming scent\n"
-
-    "to blunt the foe's fighting spirit.");
-
-
-
-const u8 gHÉRICENDRE"),
-    "It flares flames from its back to protect\n"
-
-    "itself. The fire burns vigorously if the\n"
-
-    "POKéMON is angry. When it is tired,\n"
-
-    "it sputters with incomplete combustion.");
-
-
-
-const u8 gFEURISSON"),
-    "It intimidates foes with intense gusts of\n"
-
-    "flames and superheated air. Its quick\n"
-
-    "nimbleness lets it dodge attacks even\n"
-
-    "while scorching an enemy.");
-
-
-
-const u8 gTYPHLOSION"),
-    "It can hide behind a shimmering heat haze\n"
-
-    "that it creates using its intense flames.\n"
-
-    "TYPHLOSION create blazing explosive\n"
-
-    "blasts that burn everything to cinders.");
-
-
-
-const u8 gKAIMINUS"),
-    "Despite its small body, TOTODILE's jaws\n"
-
-    "are very powerful. While it may think it is\n"
-
-    "just playfully nipping, its bite has enough\n"
-
-    "strength to cause serious injury.");
-
-
-
-const u8 gCROCRODIL"),
-    "Once its jaws clamp down on its foe, it will\n"
-
-    "absolutely not let go. Because the tips of\n"
-
-    "its fangs are forked back like fishhooks,\n"
-
-    "they become irremovably embedded.");
-
-
-
-const u8 gALIGATUEUR"),
-    "It opens its huge mouth to intimidate\n"
-
-    "enemies. In battle, it runs using its thick\n"
-
-    "and powerful hind legs to charge the\n"
-
-    "foe with incredible speed.");
-
-
-
-const u8 gFOUINETTE"),
-    "They take turns standing guard when it\n"
-
-    "is time to sleep. The sentry awakens the\n"
-
-    "others if it senses danger. If one becomes\n"
-
-    "separated, it turns sleepless with fear.");
-
-
-
-const u8 gFOUINAR"),
-    "A FURRET has a very slim build. When under\n"
-
-    "attack, it can squirm through narrow\n"
-
-    "spaces and get away. In spite of its short\n"
-
-    "limbs, it is very nimble and fleet.");
-
-
-
-const u8 gHOOTHOOT"),
-    "It has an internal organ that senses\n"
-
-    "the earth's rotation. Using this special\n"
-
-    "organ, a HOOTHOOT begins hooting at\n"
-
-    "precisely the same time every day.");
-
-
-
-const u8 gNOARFANG"),
-    "It unfailingly catches prey in darkness.\n"
-
-    "NOCTOWL owe their success to superior\n"
-
-    "vision that allows them to see in minimal\n"
-
-    "light, and to their supple and silent wings.");
-
-
-
-const u8 gCOXY"),
-    "LEDYBA communicate using a fluid that\n"
-
-    "they secrete from where the legs join the\n"
-
-    "body. They are said to convey feelings to\n"
-
-    "others by altering the fluid's scent.");
-
-
-
-const u8 gCOXYCLAQUE"),
-    "It is said that in lands with clean air,\n"
-
-    "where the stars fill the sky, there live\n"
-
-    "many LEDIAN. For good reason, they use\n"
-
-    "the light of the stars as energy.");
-
-
-
-const u8 gMIMIGAL"),
-    "The web it spins can be considered its\n"
-
-    "second nervous system. It is said that a\n"
-
-    "SPINARAK determines its prey by the tiny\n"
-
-    "vibrations it feels through the web.");
-
-
-
-const u8 gMIGALOS"),
-    "Its feet are tipped with tiny hooked claws\n"
-
-    "that enable it to scuttle on ceilings and\n"
-
-    "vertical walls. It constricts its foe with\n"
-
-    "thin and strong silk webbing.");
-
-
-
-const u8 gNOSTENFER"),
-    "Over the course of evolution, its hind legs\n"
-
-    "turned into wings. By alternately resting\n"
-
-    "its front and rear wings, it can fly all day\n"
-
-    "without having to stop.");
-
-
-
-const u8 gLOUPIO"),
-    "When it senses danger, it discharges\n"
-
-    "positive and negative electricity from its\n"
-
-    "two antennae. It lives in depths beyond\n"
-
-    "sunlight's reach.");
-
-
-
-const u8 gLANTURN"),
-    "The light-emitting orbs on its back are\n"
-
-    "very bright. They are formed from a part of\n"
-
-    "its dorsal fin. This POKéMON illuminates\n"
-
-    "the inky darkness of deep seas.");
-
-
-
-const u8 gPICHU"),
-    "It is still inept at retaining electricity.\n"
-
-    "When it is startled, it discharges power\n"
-
-    "accidentally. It gets better at holding\n"
-
-    "power as it grows older.");
-
-
-
-const u8 gMÉLO"),
-    "On nights with many shooting stars,\n"
-
-    "CLEFFA can be seen dancing in a ring.\n"
-
-    "They dance until daybreak, when they\n"
-
-    "quench their thirst with the morning dew.");
-
-
-
-const u8 gTOUDOUDOU"),
-    "Its soft and pliable body is very bouncy.\n"
-
-    "When it sings continuously with all its\n"
-
-    "might, its body steadily turns a deepening\n"
-
-    "pink color.");
-
-
-
-const u8 gTOGEPI"),
-    "As its energy, it uses the feelings of\n"
-
-    "compassion and pleasure exuded by\n"
-
-    "people and POKéMON. It stores up happy\n"
-
-    "feelings in its shell, then shares them out.");
-
-
-
-const u8 gTOGETIC"),
-    "It is said to be a POKéMON that brings good\n"
-
-    "fortune. When it spots someone who is pure\n"
-
-    "of heart, a TOGETIC appears and shares its\n"
-
-    "happiness with that person.");
-
-
-
-const u8 gNATU"),
-    "It runs up short trees that grow on the\n"
-
-    "savanna to peck at new shoots.\n"
-
-    "A NATU's eyes look as if they are\n"
-
-    "always observing something.");
-
-
-
-const u8 gXATU"),
-    "It has the enigmatic power of foreseeing\n"
-
-    "the future. Some people in different lands\n"
-
-    "have long believed that XATU are\n"
-
-    "emissaries from another world.");
-
-
-
-const u8 gWATTOUAT"),
-    "Its fluffy wool rubs together and builds\n"
-
-    "a static charge. The more energy is\n"
-
-    "charged, the more brightly the lightbulb\n"
-
-    "at the tip of its tail glows.");
-
-
-
-const u8 gLAINERGIE"),
-    "Its fleece quality changes to generate\n"
-
-    "strong static electricity with a small\n"
-
-    "amount of wool. The bare, slick parts of its\n"
-
-    "hide are shielded against electricity.");
-
-
-
-const u8 gPHARAMP"),
-    "It gives off so much light that it can be\n"
-
-    "seen even from space. People in the old\n"
-
-    "days used its light to send signals back\n"
-
-    "and forth with others far away.");
-
-
-
-const u8 gJOLIFLOR"),
-    "Its flower petals deepen in color through\n"
-
-    "exposure to sunlight. When cloudy weather\n"
-
-    "persists, it does a dance that is thought\n"
-
-    "to be a ritual for summoning the sun.");
-
-
-
-const u8 gMARILL"),
-    "Its body is covered with water-repellent\n"
-
-    "fur. Because of the fur, it can swim\n"
-
-    "through water at high speed without being\n"
-
-    "slowed by the water's resistance.");
-
-
-
-const u8 gAZUMARILL"),
-    "It lives in water virtually all day long.\n"
-
-    "Its body color and pattern act as\n"
-
-    "camouflage that makes it tough for\n"
-
-    "enemies to spot in water.");
-
-
-
-const u8 gSIMULARBRE"),
-    "It mimics a tree to avoid being attacked\n"
-
-    "by enemies. But since its forelegs\n"
-
-    "remain green throughout the year, it is\n"
-
-    "easily identified as a fake in the winter.");
-
-
-
-const u8 gTARPAUD"),
-    "The curled hair on its head proves its\n"
-
-    "status as a king. It is said that the\n"
-
-    "longer and curlier the hair, the more\n"
-
-    "respect it earns from its peers.");
-
-
-
-const u8 gGRANIVOL"),
-    "This POKéMON drifts and floats with the\n"
-
-    "wind. If it senses the approach of strong\n"
-
-    "winds, a HOPPIP links leaves with others\n"
-
-    "to prepare against being blown away.");
-
-
-
-const u8 gFLORAVOL"),
-    "It blossoms when the temperature rises\n"
-
-    "above 64 degrees F. Because its flower's\n"
-
-    "blooming changes with the temperature,\n"
-
-    "it is sometimes used as a thermometer.");
-
-
-
-const u8 gCOTOVOL"),
-    "JUMPLUFF ride warm southern winds to\n"
-
-    "cross the sea and fly to foreign lands.\n"
-
-    "This POKéMON lands when it encounters\n"
-
-    "cold air while it is floating.");
-
-
-
-const u8 gCAPUMAIN"),
-    "Its tail ends with a dexterous, handlike\n"
-
-    "appendage. However, because it uses the\n"
-
-    "tail so much, AIPOM's real hands have\n"
-
-    "become rather clumsy.");
-
-
-
-const u8 gTOURNEGRIN"),
-    "SUNKERN try to minimize movement to\n"
-
-    "conserve the nutrients they have stored\n"
-
-    "in their bodies for evolution. They will\n"
-
-    "not eat, subsisting only on morning dew.");
-
-
-
-const u8 gHÉLIATRONC"),
-    "SUNFLORA convert solar energy into\n"
-
-    "nutrition. They are highly active in the\n"
-
-    "warm daytime but suddenly stop moving as\n"
-
-    "soon as the sun sets.");
-
-
-
-const u8 gYANMA"),
-    "It can see 360 degrees without moving\n"
-
-    "its eyes. It is a great flier capable of\n"
-
-    "making sudden stops and turning midair to\n"
-
-    "quickly chase down targeted prey.");
-
-
-
-const u8 gAXOLOTO"),
-    "WOOPER usually live in water but come\n"
-
-    "out onto land seeking food occasionally.\n"
-
-    "On land, they coat their bodies with a\n"
-
-    "gooey, toxic film.");
-
-
-
-const u8 gMARAISTE"),
-    "A QUAGSIRE hunts by leaving its mouth wide\n"
-
-    "open in water and waiting for its prey to\n"
-
-    "blunder in. Because it doesn't move, it\n"
-
-    "does not get very hungry.");
-
-
-
-const u8 gMENTALI"),
-    "An ESPEON is extremely loyal to any\n"
-
-    "TRAINER it considers to be worthy. It is\n"
-
-    "said to have developed precognitive\n"
-
-    "powers to protect its TRAINER from harm.");
-
-
-
-const u8 gNOCTALI"),
-    "UMBREON evolved from exposure to the\n"
-
-    "moon's energy pulses. It lurks in darkness\n"
-
-    "and waits for its foes to move. The rings\n"
-
-    "on its body glow when it leaps to attack.");
-
-
-
-const u8 gCORNÈBRE"),
-    "MURKROW were feared as the alleged\n"
-
-    "bearers of ill fortune. It shows strong\n"
-
-    "interest in anything that sparkles. It will\n"
-
-    "even try to steal rings from women.");
-
-
-
-const u8 gROIGADA"),
-    "It undertakes research every day to\n"
-
-    "solve the mysteries of the world.\n"
-
-    "However, it apparently forgets everything\n"
-
-    "if the SHELLDER on its head comes off.");
-
-
-
-const u8 gFEUFORÊVE"),
-    "A MISDREAVUS frightens people with a\n"
-
-    "creepy, sobbing cry. It apparently uses\n"
-
-    "its red spheres to absorb the fear of foes\n"
-
-    "as its nutrition.");
-
-
-
-const u8 gZARBI"),
-    "This POKéMON is shaped like ancient text\n"
-
-    "characters. Although research is ongoing,\n"
-
-    "it is a mystery as to which came first,\n"
-
-    "the ancient writings or the various UNOWN.");
-
-
-
-const u8 gQULBUTOKÉ"),
-    "Usually docile, a WOBBUFFET strikes back\n"
-
-    "ferociously if its black tail is attacked.\n"
-
-    "It makes its lair in caves where it waits\n"
-
-    "for nightfall.");
-
-
-
-const u8 gGIRAFARIG"),
-    "A GIRAFARIG is an herbivore--it eats\n"
-
-    "grass and tree shoots. While it is eating,\n"
-
-    "its tail makes chewing and swallowing\n"
-
-    "motions as if it were also eating.");
-
-
-
-const u8 gPOMDEPIK"),
-    "A PINECO hangs from a tree branch and\n"
-
-    "waits for prey. While eating, if it is\n"
-
-    "disturbed by someone shaking its tree, it\n"
-
-    "falls on the ground and suddenly explodes.");
-
-
-
-const u8 gFORETRESS"),
-    "It keeps itself inside its steel shell.\n"
-
-    "The shell is opened when it is catching\n"
-
-    "prey, but it is so quick that the shell's\n"
-
-    "inside cannot be seen.");
-
-
-
-const u8 gINSOLOURDO"),
-    "Its drill-tipped tail is used to burrow into\n"
-
-    "the ground backwards. This POKéMON is\n"
-
-    "known to make its nest in complex shapes\n"
-
-    "deep under the ground.");
-
-
-
-const u8 gSCORPLANE"),
-    "It glides without making a single sound.\n"
-
-    "It grasps the face of its foe using its\n"
-
-    "hind and large front claws, then stabs\n"
-
-    "with its poison barb.");
-
-
-
-const u8 gSTEELIX"),
-    "STEELIX live even further underground\n"
-
-    "than ONIX. This POKéMON is known to dig\n"
-
-    "toward the earth's core, reaching a depth\n"
-
-    "of over six-tenths of a mile underground.");
-
-
-
-const u8 gSNUBBULL"),
-    "By baring its fangs and making a scary\n"
-
-    "face, it sends smaller POKéMON scurrying\n"
-
-    "in terror. The SNUBBULL does seem a\n"
-
-    "little sad at making its foes flee.");
-
-
-
-const u8 gGRANBULL"),
-    "It has a particularly well-developed lower\n"
-
-    "jaw. The huge fangs are heavy, causing\n"
-
-    "it to tilt its head. Unless it is startled, it\n"
-
-    "will not try to bite.");
-
-
-
-const u8 gQWILFISH"),
-    "A QWILFISH uses the pressure of water\n"
-
-    "it swallows to shoot toxic quills all at\n"
-
-    "once from all over its body. It finds\n"
-
-    "swimming to be somewhat challenging.");
-
-
-
-const u8 gCIZAYOX"),
-    "A SCIZOR has a body with the hardness of\n"
-
-    "steel. It is not easily fazed by ordinary\n"
-
-    "sorts of attacks. It flaps its wings to\n"
-
-    "regulate its body temperature.");
-
-
-
-const u8 gCARATROC"),
-    "A SHUCKLE hides under rocks, keeping its\n"
-
-    "body concealed inside its shell while\n"
-
-    "eating stored berries. The berries mix with\n"
-
-    "its body fluids to become a juice.");
-
-
-
-const u8 gSCARHINO"),
-    "They gather in forests seeking the sweet\n"
-
-    "sap of trees. It is completely clad in a\n"
-
-    "steel-hard shell. It is proud of its horn,\n"
-
-    "which it uses to fling foes.");
-
-
-
-const u8 gFARFURET"),
-    "A SNEASEL scales trees by punching its\n"
-
-    "hooked claws into the bark. It seeks out\n"
-
-    "unguarded nests and steals eggs for food\n"
-
-    "while the parents are away.");
-
-
-
-const u8 gTEDDIURSA"),
-    "It licks its palms that are sweetened by\n"
-
-    "being soaked in honey. A TEDDIURSA makes\n"
-
-    "its own honey by blending fruits and pollen\n"
-
-    "collected by BEEDRILL.");
-
-
-
-const u8 gURSARING"),
-    "In forests, it is said that there are many\n"
-
-    "streams and towering trees where an\n"
-
-    "URSARING gathers food. It walks through\n"
-
-    "its forest collecting food every day.");
-
-
-
-const u8 gLIMAGMA"),
-    "It is a species of POKéMON that lives in\n"
-
-    "volcanic areas. If its body cools, its skin\n"
-
-    "hardens and immobilizes it. To avoid that,\n"
-
-    "it sleeps near magma.");
-
-
-
-const u8 gVOLCAROPOD"),
-    "The shell on its back is made of hardened\n"
-
-    "magma. Tens of thousands of years spent\n"
-
-    "living in volcanic craters have turned\n"
-
-    "MAGCARGO's bodies into magma.");
-
-
-
-const u8 gMARCACRIN"),
-    "It roots for food by rubbing its snout\n"
-
-    "against the ground. Its favorite food is a\n"
-
-    "mushroom that grows under dried grass.\n"
-
-    "It occasionally roots out hot springs.");
-
-
-
-const u8 gCOCHIGNON"),
-    "A PILOSWINE is covered by a thick coat\n"
-
-    "of long hair for enduring freezing cold.\n"
-
-    "It uses its tusks to dig up food that has\n"
-
-    "been buried under ice.");
-
-
-
-const u8 gCORAYON"),
-    "CORSOLA live in warm southern seas.\n"
-
-    "If the sea becomes polluted, the beautiful\n"
-
-    "coral stalks become discolored and crumble\n"
-
-    "away in tatters.");
-
-
-
-const u8 gRÉMORAID"),
-    "A REMORAID uses its abdominal muscles\n"
-
-    "to forcefully expel swallowed water, then\n"
-
-    "shoot down flying prey. When evolution\n"
-
-    "approaches, it travels down rivers.");
-
-
-
-const u8 gOCTILLERY"),
-    "It ensnares its foe with its suction-\n"
-
-    "cupped tentacles before delivering the\n"
-
-    "finishing blow. If the foe turns out to be\n"
-
-    "too strong, it spews ink to escape.");
-
-
-
-const u8 gCADOIZO"),
-    "It carries food bundled up in its tail.\n"
-
-    "There was a famous explorer who\n"
-
-    "managed to scale Mt. Everest thanks\n"
-
-    "to a DELIBIRD sharing its food.");
-
-
-
-const u8 gDÉMANTA"),
-    "On sunny days, schools of MANTINE can be\n"
-
-    "seen elegantly leaping over the waves.\n"
-
-    "It is not bothered by the REMORAID that\n"
-
-    "hitches rides.");
-
-
-
-const u8 gAIRMURE"),
-    "A POKéMON that has a body and wings of\n"
-
-    "steel. People in the past used feathers\n"
-
-    "fallen from SKARMORY to make swords and\n"
-
-    "knives.");
-
-
-
-const u8 gMALOSSE"),
-    "HOUNDOUR communicate with each other\n"
-
-    "using a variety of cries to corner their\n"
-
-    "prey. This POKéMON's remarkable teamwork\n"
-
-    "is simply unparalleled.");
-
-
-
-const u8 gDÉMOLOSSE"),
-    "In a HOUNDOOM pack, the one with its horns\n"
-
-    "raked sharply back serves a leadership\n"
-
-    "role. They choose their leader by fighting\n"
-
-    "among themselves.");
-
-
-
-const u8 gHYPOROI"),
-    "It sleeps quietly, deep on the seafloor.\n"
-
-    "When it comes up to the surface, it\n"
-
-    "creates a huge whirlpool that can swallow\n"
-
-    "even ships.");
-
-
-
-const u8 gPHANPY"),
-    "PHANPY's big ears serve as broad fans.\n"
-
-    "When it becomes hot, it flaps the ears\n"
-
-    "busily to cool down. Even the young are\n"
-
-    "very strong.");
-
-
-
-const u8 gDONPHAN"),
-    "A DONPHAN is so strong it can easily haul\n"
-
-    "a dump truck. Its hide has toughened to a\n"
-
-    "rock-hard state. An ordinary sort of\n"
-
-    "attack won't even leave a scratch.");
-
-
-
-const u8 gPORYGON2"),
-    "It was created by humans using the power\n"
-
-    "of science. It has been given artificial\n"
-
-    "intelligence that enables it to learn new\n"
-
-    "gestures and emotions on its own.");
-
-
-
-const u8 gCERFROUSSE"),
-    "STANTLER's magnificent antlers were\n"
-
-    "once traded at high prices as works of art.\n"
-
-    "As a result, this POKéMON was hunted\n"
-
-    "close to extinction.");
-
-
-
-const u8 gQUEULORIOR"),
-    "A SMEARGLE marks its territory using a\n"
-
-    "fluid that leaks out from the tip of its\n"
-
-    "tail. About 5,000 different marks left by\n"
-
-    "this POKéMON have been found.");
-
-
-
-const u8 gDEBUGANT"),
-    "TYROGUE become stressed out if they do\n"
-
-    "not get to train every day. When raising\n"
-
-    "this POKéMON, the TRAINER must establish\n"
-
-    "a regular training schedule.");
-
-
-
-const u8 gKAPOERA"),
-    "Its technique of kicking while spinning is\n"
-
-    "a remarkable mix of both offense and\n"
-
-    "defense. HITMONTOP travel faster\n"
-
-    "spinning than they do walking.");
-
-
-
-const u8 gLIPPOUTI"),
-    "It actively runs about, but also falls\n"
-
-    "often. Whenever it falls, it will check its\n"
-
-    "reflection on a lake's surface to make\n"
-
-    "sure its face hasn't become dirty.");
-
-
-
-const u8 gÉLEKID"),
-    "If it touches metal and discharges the\n"
-
-    "electricity it has stored in its body, an\n"
-
-    "ELEKID begins swinging its arms in circles\n"
-
-    "to recharge itself.");
-
-
-
-const u8 gMAGBY"),
-    "If a MAGBY is spouting yellow flames from\n"
-
-    "its mouth, it is in good health. When it is\n"
-
-    "fatigued, black smoke will be mixed in with\n"
-
-    "the flames.");
-
-
-
-const u8 gÉCRÉMEUH"),
-    "It gives over five gallons of milk daily.\n"
-
-    "Its sweet milk is enjoyed by children and\n"
-
-    "grown-ups alike. People who can't drink\n"
-
-    "milk turn it into yogurt and eat it instead.");
-
-
-
-const u8 gLEUPHORIE"),
-    "If it senses sadness with its fluffy fur,\n"
-
-    "a BLISSEY will rush over to the sad person,\n"
-
-    "however far away, to share an egg of\n"
-
-    "happiness that brings a smile to any face.");
-
-
-
-const u8 gRAIKOU"),
-    "RAIKOU embodies the speed of lightning.\n"
-
-    "Its roars send shock waves shuddering\n"
-
-    "through the air and ground as if\n"
-
-    "lightning bolts were crashing down.");
-
-
-
-const u8 gENTEI"),
-    "ENTEI embodies the passion of magma.\n"
-
-    "It is thought to have been born in the\n"
-
-    "eruption of a volcano. It blasts fire that\n"
-
-    "consumes all that it touches.");
-
-
-
-const u8 gSUICUNE"),
-    "SUICUNE embodies the compassion of\n"
-
-    "a pure spring of water. It runs across\n"
-
-    "the land with gliding elegance. It has the\n"
-
-    "power to purify dirty water.");
-
-
-
-const u8 gEMBRYLEX"),
-    "A LARVITAR is born deep under the ground.\n"
-
-    "It must eat its way through the soil above\n"
-
-    "and reach the surface for it to see its\n"
-
-    "parents' faces.");
-
-
-
-const u8 gYMPHECT"),
-    "A PUPITAR creates a gas inside its body\n"
-
-    "that it ejects under compression to propel\n"
-
-    "itself like a jet. Its body can withstand\n"
-
-    "a collision with solid steel.");
-
-
-
-const u8 gTYRANOCIF"),
-    "A TYRANITAR is so overwhelmingly powerful,\n"
-
-    "it can bring down a whole mountain to make\n"
-
-    "its nest. It roams in mountains seeking\n"
-
-    "new opponents to fight.");
-
-
-
-const u8 gLUGIA"),
-    "LUGIA is so powerful even a light\n"
-
-    "fluttering of its wings can blow apart\n"
-
-    "houses. As a result, it chooses to live out\n"
-
-    "of sight deep under the sea.");
-
-
-
-const u8 gHoOhPokedexText[] = _(
-
-    "Its feathers--which glow in seven colors\n"
-
-    "depending on the angle at which they are\n"
-
-    "struck by light--are thought to bring joy.\n"
-
-    "It is said to live at the foot of a rainbow.");
-
-
-
-const u8 gCELEBI"),
-    "This POKéMON came from the future by\n"
-
-    "crossing over time. It is thought that so\n"
-
-    "long as CELEBI appears, a bright and\n"
-
-    "shining future awaits us.");
-
-
-
-const u8 gARCKO"),
-    "It makes its nest in a giant tree in the\n"
-
-    "forest. It ferociously guards against\n"
-
-    "anything nearing its territory. It is said\n"
-
-    "to be the protector of the forest's trees.");
-
-
-
-const u8 gMASSKO"),
-    "Leaves grow out of this POKéMON's body.\n"
-
-    "They help obscure a GROVYLE from the eyes\n"
-
-    "of its enemies while it is in a thickly\n"
-
-    "overgrown forest.");
-
-
-
-const u8 gJUNGKO"),
-    "In the jungle, its power is without equal.\n"
-
-    "This POKéMON carefully grows trees and\n"
-
-    "plants. It regulates its body temperature\n"
-
-    "by basking in sunlight.");
-
-
-
-const u8 gPOUSSIFEU"),
-    "If attacked, it strikes back by spitting\n"
-
-    "balls of fire it forms in its stomach.\n"
-
-    "A TORCHIC dislikes darkness because it\n"
-
-    "can't see its surroundings.");
-
-
-
-const u8 gGALIFEU"),
-    "It lashes out with 10 kicks per second.\n"
-
-    "Its strong fighting instinct compels it\n"
-
-    "to keep up its offensive until the\n"
-
-    "opponent gives up.");
-
-
-
-const u8 gBRASÉGALI"),
-    "It learns martial arts that use punches\n"
-
-    "and kicks. Every several years, its old\n"
-
-    "feathers burn off, and new, supple\n"
-
-    "feathers grow back in their place.");
-
-
-
-const u8 gGOBOU"),
-    "On land, it can powerfully lift large\n"
-
-    "boulders by planting its four feet and\n"
-
-    "heaving. It sleeps by burying itself in soil\n"
-
-    "at the water's edge.");
-
-
-
-const u8 gFLOBIO"),
-    "Its toughened hind legs enable it to stand\n"
-
-    "upright. Because it weakens if its skin\n"
-
-    "dries out, it replenishes fluids by playing\n"
-
-    "in mud.");
-
-
-
-const u8 gLAGGRON"),
-    "If it senses the approach of a storm and\n"
-
-    "a tidal wave, it protects its seaside nest\n"
-
-    "by piling up boulders. It swims as fast as\n"
-
-    "a jet ski.");
-
-
-
-const u8 gMEDHYÈNA"),
-    "It savagely threatens foes with bared\n"
-
-    "fangs. It chases after fleeing targets\n"
-
-    "tenaciously. It turns tail and runs,\n"
-
-    "however, if the foe strikes back.");
-
-
-
-const u8 gGRAHYÈNA"),
-    "In the wild, MIGHTYENA live in a pack.\n"
-
-    "They never defy their leader's orders.\n"
-
-    "They defeat foes with perfectly\n"
-
-    "coordinated teamwork.");
-
-
-
-const u8 gZIGZATON"),
-    "Rubbing its nose against the ground, it\n"
-
-    "always wanders about back and forth in\n"
-
-    "search of something. It is distinguished\n"
-
-    "by the zigzag footprints it leaves.");
-
-
-
-const u8 gLINÉON"),
-    "It is exceedingly fast if it only has to run\n"
-
-    "in a straight line. When it spots pond-\n"
-
-    "dwelling prey underwater, it quickly leaps\n"
-
-    "in and catches it with its sharp claws.");
-
-
-
-const u8 gCHENIPOTTE"),
-    "It sticks to tree branches and eats\n"
-
-    "leaves. The thread it spits from its mouth,\n"
-
-    "which becomes gooey when it touches\n"
-
-    "air, slows the movement of its foes.");
-
-
-
-const u8 gARMULYS"),
-    "It prepares for evolution using the\n"
-
-    "energy it stored while it was a WURMPLE.\n"
-
-    "It keeps watch over the surroundings with\n"
-
-    "its two eyes.");
-
-
-
-const u8 gCHARMILLON"),
-    "Its colorfully patterned wings are its\n"
-
-    "most prominent feature. It flies through\n"
-
-    "flower-covered fields collecting pollen.\n"
-
-    "It attacks ferociously when angered.");
-
-
-
-const u8 gBLINDALYS"),
-    "To avoid detection by its enemies, it hides\n"
-
-    "motionlessly beneath large leaves and in\n"
-
-    "the gaps of branches. It also attaches\n"
-
-    "dead leaves to its body for camouflage.");
-
-
-
-const u8 gPAPINOX"),
-    "It is a nocturnal POKéMON that flies from\n"
-
-    "fields and mountains to the attraction of\n"
-
-    "streetlights at night. It looses highly\n"
-
-    "toxic powder from its wings.");
-
-
-
-const u8 gNÉNUPIOT"),
-    "This POKéMON lives in ponds with clean\n"
-
-    "water. It is known to ferry small POKéMON\n"
-
-    "across ponds by carrying them on the\n"
-
-    "broad leaf on its head.");
-
-
-
-const u8 gLOMBRE"),
-    "In the evening, it takes great delight in\n"
-
-    "popping out of rivers and startling people.\n"
-
-    "It feeds on aquatic moss that grows on\n"
-
-    "rocks in the riverbed.");
-
-
-
-const u8 gLUDICOLO"),
-    "When it hears festive music, all the cells\n"
-
-    "in its body become stimulated, and it\n"
-
-    "begins moving in rhythm. It does not\n"
-
-    "quail even when it faces a tough opponent.");
-
-
-
-const u8 gGRAINIPIOT"),
-    "It hangs off branches and absorbs\n"
-
-    "nutrients. When it finishes eating, its\n"
-
-    "body becomes so heavy that it drops to\n"
-
-    "the ground with a thump.");
-
-
-
-const u8 gPIFEUIL"),
-    "A forest-dwelling POKéMON that is skilled\n"
-
-    "at climbing trees. Its long and pointed\n"
-
-    "nose is its weak point. It loses power if\n"
-
-    "the nose is gripped.");
-
-
-
-const u8 gTENGALICE"),
-    "It is said to arrive on chilly, wintry winds.\n"
-
-    "Feared from long ago as the guardian of\n"
-
-    "forests, this POKéMON lives in a deep\n"
-
-    "forest where people do not venture.");
-
-
-
-const u8 gNIRONDELLE"),
-    "Although it is small, it is very courageous.\n"
-
-    "It will take on a larger SKARMORY on an\n"
-
-    "equal footing. However, its will weakens if\n"
-
-    "it becomes hungry.");
-
-
-
-const u8 gHÉLÉDELLE"),
-    "A SWELLOW dives upon prey from far above.\n"
-
-    "It never misses its targets. It takes to\n"
-
-    "the skies in search of lands with a warm\n"
-
-    "climate.");
-
-
-
-const u8 gGOÉLISE"),
-    "It makes its nest on a sheer cliff at the\n"
-
-    "edge of the sea. It has trouble keeping\n"
-
-    "its wings flapping in flight. Instead, it\n"
-
-    "soars on updrafts.");
-
-
-
-const u8 gBEKIPAN"),
-    "It skims the tops of waves as it flies.\n"
-
-    "When it spots prey, it uses its large beak\n"
-
-    "to scoop up the victim with water.\n"
-
-    "It protects its eggs in its beak.");
-
-
-
-const u8 gTARSAL"),
-    "A RALTS has the power to sense the\n"
-
-    "emotions of people and POKéMON with the\n"
-
-    "horns on its head. It takes cover if it\n"
-
-    "senses any hostility.");
-
-
-
-const u8 gKIRLIA"),
-    "A KIRLIA has the psychic power to create \n"
-
-    "a rip in the dimensions and see into the\n"
-
-    "future. It is said to dance with pleasure\n"
-
-    "on sunny mornings.");
-
-
-
-const u8 gGARDEVOIR"),
-    "It apparently does not feel the pull of\n"
-
-    "gravity because it supports itself with\n"
-
-    "psychic power. It will give its life to\n"
-
-    "protect its TRAINER.");
-
-
-
-const u8 gARAKDO"),
-    "They gather on puddles after evening\n"
-
-    "downpours, gliding across the surface\n"
-
-    "of water as if sliding. It secretes honey\n"
-
-    "with a sweet aroma from its head.");
-
-
-
-const u8 gMASKADRA"),
-    "It intimidates foes with the large eyelike\n"
-
-    "patterns on its antennae. Because it can't\n"
-
-    "fly if its wings get wet, it shelters itself\n"
-
-    "from rain under large trees and eaves.");
-
-
-
-const u8 gBALIGNON"),
-    "It loves to eat damp, composted soil in\n"
-
-    "forests. If you enter a forest after a\n"
-
-    "long rain, you can see many SHROOMISH\n"
-
-    "feasting on composted soil.");
-
-
-
-const u8 gCHAPIGNON"),
-    "It scatters spores from holes in the cap\n"
-
-    "on its head. It loves warm and humid\n"
-
-    "climates. It feeds on trees and plants in\n"
-
-    "fields and forests.");
-
-
-
-const u8 gPARECOOL"),
-    "It sleeps virtually all day and night long.\n"
-
-    "It doesn't change its nest its entire life,\n"
-
-    "but it sometimes travels great distances\n"
-
-    "by swimming in rivers.");
-
-
-
-const u8 gVIGOROTH"),
-    "It can't keep still because its blood boils\n"
-
-    "with energy. It runs through the fields\n"
-
-    "and mountains all day to calm itself. If it\n"
-
-    "doesn't, it can't sleep at night.");
-
-
-
-const u8 gMONAFLÈMIT"),
-    "Hordes of SLAKING gather around trees\n"
-
-    "when fruits come into season. They wait\n"
-
-    "around patiently for ripened fruits to fall\n"
-
-    "out of the trees.");
-
-
-
-const u8 gNINGALE"),
-    "It makes its nest at the roots of a mighty\n"
-
-    "tree. Using its whiskerlike antennae, it\n"
-
-    "probes its surroundings in the\n"
-
-    "pitch-black darkness of soil.");
-
-
-
-const u8 gNINJASK"),
-    "Because it darts about vigorously at high\n"
-
-    "speed, it is very difficult to see. Hearing\n"
-
-    "its distinctive cries for too long induces\n"
-
-    "a headache.");
-
-
-
-const u8 gMUNJA"),
-    "A peculiar POKéMON that floats in air even\n"
-
-    "though its wings remain completely still.\n"
-
-    "The inside of its body is hollow and\n"
-
-    "utterly dark.");
-
-
-
-const u8 gCHUCHMUR"),
-    "Its cries equal a jet plane in volume.\n"
-
-    "It inhales through its ear canals. Because\n"
-
-    "of this system, it can cry continually\n"
-
-    "without having to catch its breath.");
-
-
-
-const u8 gRAMBOUM"),
-    "It positions the round speakers on its\n"
-
-    "head to assail foes with ultrasonic waves\n"
-
-    "at massive volume. It builds power by\n"
-
-    "stomping the ground.");
-
-
-
-const u8 gBROUHABAM"),
-    "It has sound-generating organs all over\n"
-
-    "its body. It communicates with others by\n"
-
-    "adjusting the tone and volume of the cries\n"
-
-    "it emits.");
-
-
-
-const u8 gMAKUHITA"),
-    "It loves to toughen up its body above all\n"
-
-    "else. If you hear quaking rumbles in a cave,\n"
-
-    "it is the sound of MAKUHITA undertaking\n"
-
-    "strenuous training.");
-
-
-
-const u8 gHARIYAMA"),
-    "It has the habit of challenging others\n"
-
-    "without hesitation to tests of strength.\n"
-
-    "It's been known to stand on train tracks\n"
-
-    "and stop trains using forearm thrusts.");
-
-
-
-const u8 gAZURILL"),
-    "Its tail, which is packed with nutrition,\n"
-
-    "is very bouncy like a rubber ball. On sunny\n"
-
-    "days they gather at the edge of water and\n"
-
-    "splash about for fun.");
-
-
-
-const u8 gTARINOR"),
-    "Its body emits a powerful magnetism.\n"
-
-    "It feeds on prey that is pulled in by the\n"
-
-    "force. Its magnetism is stronger in cold\n"
-
-    "seasons.");
-
-
-
-const u8 gSKITTY"),
-    "A SKITTY's adorably cute behavior makes it\n"
-
-    "highly popular. In battle, it makes its tail\n"
-
-    "puff out. It threatens foes with a sharp\n"
-
-    "growl.");
-
-
-
-const u8 gDELCATTY"),
-    "Rather than keeping a permanent lair,\n"
-
-    "it habitually seeks comfortable spots and\n"
-
-    "sleeps there. It is nocturnal and becomes\n"
-
-    "active at dusk.");
-
-
-
-const u8 gTÉNÉFIX"),
-    "It digs branching holes in caves using its\n"
-
-    "sharp claws in search of food--raw gems.\n"
-
-    "A SABLEYE lurks in darkness and is seen\n"
-
-    "only rarely.");
-
-
-
-const u8 gMYSDIBULE"),
-    "Its giant jaws are actually steel horns\n"
-
-    "that transformed. It fools foes into\n"
-
-    "complacency with its adorable gestures,\n"
-
-    "then chomps them with its huge jaws.");
-
-
-
-const u8 gGALEKID"),
-    "A POKéMON that is clad in steel armor.\n"
-
-    "A new suit of armor is made when it evolves.\n"
-
-    "The old, discarded armor is salvaged as\n"
-
-    "metal for making iron products.");
-
-
-
-const u8 gGALEGON"),
-    "When two LAIRON meet in the wild, they\n"
-
-    "fight for territory by bashing into each\n"
-
-    "other with their steel bodies. The sound\n"
-
-    "of their collision carries for miles.");
-
-
-
-const u8 gGALEKING"),
-    "Its iron horns grow longer a little at\n"
-
-    "a time. They are used to determine the\n"
-
-    "AGGRON's age. The gouges in its armor are\n"
-
-    "worn with pride as mementos from battles.");
-
-
-
-const u8 gMÉDITIKKA"),
-    "It continually meditates for hours every\n"
-
-    "day. As a result of rigorous and dedicated\n"
-
-    "yoga training, it has tempered its\n"
-
-    "spiritual power so much it can fly.");
-
-
-
-const u8 gCHARMINA"),
-    "Through crushingly harsh yoga training, it\n"
-
-    "gained the power to foretell its foe's\n"
-
-    "actions. It battles with elegant, dance-\n"
-
-    "like movement.");
-
-
-
-const u8 gDYNAVOLT"),
-    "It generates electricity using friction\n"
-
-    "from the atmosphere. In seasons with\n"
-
-    "especially arid air, its entire body blazes\n"
-
-    "with violent showers of sparks.");
-
-
-
-const u8 gÉLECSPRINT"),
-    "Because lightning falls in their vicinities,\n"
-
-    "MANECTRIC were thought to have been born\n"
-
-    "from lightning. In battle, they create\n"
-
-    "thunderclouds.");
-
-
-
-const u8 gPOSIPI"),
-    "It has the trait of cheering on its fellow\n"
-
-    "POKéMON. By shorting out the electricity\n"
-
-    "it releases from its paws, it creates\n"
-
-    "pom-poms for cheering.");
-
-
-
-const u8 gNÉGAPI"),
-    "At a meeting of POKéMON academics, it was\n"
-
-    "announced that simultaneous exposure to\n"
-
-    "electricity from a PLUSLE and MINUN will\n"
-
-    "promote circulation and boost vitality.");
-
-
-
-const u8 gMUCIOLE"),
-    "With their taillights lit, VOLBEAT fly in\n"
-
-    "a swarm, drawing geometric designs in the\n"
-
-    "night sky. They move their nests if their\n"
-
-    "pond water becomes dirty.");
-
-
-
-const u8 gLUMIVOLE"),
-    "A nocturnal POKéMON that becomes active\n"
-
-    "upon nightfall. It leads a VOLBEAT swarm\n"
-
-    "to draw patterns in the night sky. Over 200\n"
-
-    "different patterns have been confirmed.");
-
-
-
-const u8 gROSÉLIA"),
-    "A ROSELIA that drinks nutritionally rich\n"
-
-    "springwater blooms with lovely flowers.\n"
-
-    "The fragrance of its flowers has the\n"
-
-    "effect of making its foes careless.");
-
-
-
-const u8 gGLOUPTI"),
-    "This POKéMON's stomach fluid can even\n"
-
-    "digest scrap iron. In one gulp, it can\n"
-
-    "swallow something that is as large as\n"
-
-    "itself.");
-
-
-
-const u8 gAVALTOUT"),
-    "Its powerful stomach acid is capable of\n"
-
-    "digesting almost anything. The one thing\n"
-
-    "in the whole world a SWALOT can't digest is\n"
-
-    "its own stomach.");
-
-
-
-const u8 gCARVANHA"),
-    "CARVANHA attack ships in swarms, making\n"
-
-    "them sink. Although it is said to be a very\n"
-
-    "vicious POKéMON, it timidly flees as soon\n"
-
-    "as it finds itself alone.");
-
-
-
-const u8 gSHARPEDO"),
-    "The vicious and sly gangster of the sea.\n"
-
-    "Its skin is specially textured to minimize\n"
-
-    "drag in water. Its speed tops out at over\n"
-
-    "75 miles per hour.");
-
-
-
-const u8 gWAILMER"),
-    "While this POKéMON usually lives in the sea,\n"
-
-    "it can survive on land, although not too\n"
-
-    "long. It loses vitality if its body becomes\n"
-
-    "dried out.");
-
-
-
-const u8 gWAILORD"),
-    "It breathes through nostrils that it\n"
-
-    "raises above the sea. By inhaling to its\n"
-
-    "maximum capacity, a WAILORD can dive close\n"
-
-    "to 10,000 feet beneath the waves.");
-
-
-
-const u8 gCHAMALLOT"),
-    "A NUMEL stores boiling magma in the hump\n"
-
-    "on its back. It is a hardy POKéMON that can\n"
-
-    "transport a 220-pound load. It has served\n"
-
-    "humans at work since long ago.");
-
-
-
-const u8 gCAMÉRUPT"),
-    "A POKéMON that lives in the crater of\n"
-
-    "a volcano. Every 10 years, the volcanoes\n"
-
-    "on its back erupt violently. Research is\n"
-
-    "under way on the cause of eruption.");
-
-
-
-const u8 gCHARTOR"),
-    "It battles using energy it gets from\n"
-
-    "burning coal. When loosing smoke from its\n"
-
-    "nostrils, it lets off a sound that is\n"
-
-    "similar to a locomotive's horn.");
-
-
-
-const u8 gSPOINK"),
-    "A POKéMON that manipulates psychic power\n"
-
-    "at will. It doesn't stop bouncing even when\n"
-
-    "it is asleep. It loves eating mushrooms\n"
-
-    "that grow underground.");
-
-
-
-const u8 gGRORET"),
-    "It stores power in the black pearls on its\n"
-
-    "forehead. When it uses psychic power, it\n"
-
-    "performs an odd dance step. Its style of\n"
-
-    "dancing became hugely popular overseas.");
-
-
-
-const u8 gSPINDA"),
-    "It is distinguished by a pattern of\n"
-
-    "spots that is always different. Its\n"
-
-    "unsteady, tottering walk has the\n"
-
-    "effect of fouling its foe's aim.");
-
-
-
-const u8 gKRAKNOIX"),
-    "Its big jaws crunch through boulders.\n"
-
-    "Because its head is so big, it has a hard\n"
-
-    "time getting back upright if it tips over\n"
-
-    "onto its back.");
-
-
-
-const u8 gVIBRANINF"),
-    "It looses ultrasonic waves by rubbing its\n"
-
-    "wings together. Since a VIBRAVA's wings\n"
-
-    "are still in the process of growing, it can\n"
-
-    "only fly short distances.");
-
-
-
-const u8 gLIBÉGON"),
-    "The flapping of its wings sounds like\n"
-
-    "singing. To prevent detection by enemies,\n"
-
-    "it hides itself by flapping up a cloud of\n"
-
-    "desert sand.");
-
-
-
-const u8 gCACNEA"),
-    "CACNEA live in deserts with virtually no\n"
-
-    "rainfall. It battles by swinging its thick,\n"
-
-    "spiked arms. Once a year, a yellow flower\n"
-
-    "blooms.");
-
-
-
-const u8 gCACTURNE"),
-    "After spending thousands of years in\n"
-
-    "harsh deserts, its blood transformed into\n"
-
-    "the same substances as sand. It is\n"
-
-    "nocturnal, so it hunts at night.");
-
-
-
-const u8 gTYLTON"),
-    "A POKéMON that has wings like cottony\n"
-
-    "clouds. After enduring winter, in which\n"
-
-    "little food is available, SWABLU flocks\n"
-
-    "move closer to towns in the spring.");
-
-
-
-const u8 gALTARIA"),
-    "It hums in a beautiful soprano voice.\n"
-
-    "It flies among white clouds in the blue\n"
-
-    "sky. It launches intensely hot fireballs\n"
-
-    "from its mouth.");
-
-
-
-const u8 gMANGRIFF"),
-    "When it battles, it stands on its hind legs\n"
-
-    "and attacks with its sharply clawed\n"
-
-    "forelegs. Its fur bristles if it encounters\n"
-
-    "any SEVIPER.");
-
-
-
-const u8 gSÉVIPER"),
-    "SEVIPER and ZANGOOSE are eternal rivals.\n"
-
-    "It counters a ZANGOOSE's dazzling agility\n"
-
-    "with its swordlike tail, which also oozes\n"
-
-    "a horrible poison.");
-
-
-
-const u8 gSÉLÉROC"),
-    "It becomes very active on the night of\n"
-
-    "a full moon. This POKéMON was first\n"
-
-    "discovered 40 years ago at the site of\n"
-
-    "a meteor strike.");
-
-
-
-const u8 gSOLAROC"),
-    "Solar energy is the source of this \n"
-
-    "POKéMON's power. On sunny days, groups of\n"
-
-    "SOLROCK line up facing the sun and absorb\n"
-
-    "its light.");
-
-
-
-const u8 gBARLOCHE"),
-    "Its body is covered with a slimy film.\n"
-
-    "The film acts as a barrier to prevent germs\n"
-
-    "in muddy water from entering the\n"
-
-    "BARBOACH's body.");
-
-
-
-const u8 gBARBICHA"),
-    "Mysteriously, it can foretell earthquakes.\n"
-
-    "In the daytime, it sleeps in mud at the\n"
-
-    "bottom of a pond. When it awakens, it\n"
-
-    "continually feeds throughout the night.");
-
-
-
-const u8 gÉCRAPINCE"),
-    "Once it grips prey with its large pincers,\n"
-
-    "it will never let go, no matter what.\n"
-
-    "It is a hardy POKéMON that can thrive\n"
-
-    "in any environment.");
-
-
-
-const u8 gCOLHOMARD"),
-    "A brutish POKéMON that loves to battle.\n"
-
-    "A veteran CRAWDAUNT that has prevailed in\n"
-
-    "hundreds of battles has giant pincers\n"
-
-    "marked with countless scars.");
-
-
-
-const u8 gBALBUTO"),
-    "A BALTOY moves by spinning on its single\n"
-
-    "foot. It has been depicted in murals \n"
-
-    "adorning the walls of a once-bustling city\n"
-
-    "in an ancient age.");
-
-
-
-const u8 gKAORINE"),
-    "A CLAYDOL sleeps while hovering in midair.\n"
-
-    "Its arms are separate from its body.\n"
-
-    "They are kept floating by the POKéMON's\n"
-
-    "manipulation of psychic power.");
-
-
-
-const u8 gLILIA"),
-    "It disguises itself as seaweed by making\n"
-
-    "its tentacles sway. Unsuspecting prey\n"
-
-    "that come too close are swallowed whole.\n"
-
-    "It became extinct 100 million years ago.");
-
-
-
-const u8 gVACILYS"),
-    "It drags its heavy body along the\n"
-
-    "seafloor. It makes its nest in the shallows\n"
-
-    "of warm seas. CRADILY can be seen on\n"
-
-    "beaches when the tide goes out.");
-
-
-
-const u8 gANORITH"),
-    "It was resurrected from a fossil using the\n"
-
-    "power of science. It swims by undulating\n"
-
-    "the eight wings at its sides. They were\n"
-
-    "feet that adapted to life in the sea.");
-
-
-
-const u8 gARMALDO"),
-    "ARMALDO usually lives on land. However,\n"
-
-    "when it hunts for prey, it dives beneath\n"
-
-    "the ocean. It swims around using its two\n"
-
-    "large wings.");
-
-
-
-const u8 gBARPAU"),
-    "FEEBAS live in ponds that are heavily\n"
-
-    "infested with weeds. Because of its\n"
-
-    "hopelessly shabby appearance, it\n"
-
-    "seems as if few TRAINERS raise it.");
-
-
-
-const u8 gMILOBELLUS"),
-    "It is said to live at the bottom of\n"
-
-    "large lakes. Considered to be the most\n"
-
-    "beautiful of all POKéMON, it has been\n"
-
-    "depicted in paintings and statues.");
-
-
-
-const u8 gMORPHÉO"),
-    "It alters its form depending on the\n"
-
-    "weather. Changes in the climate such as\n"
-
-    "the temperature and humidity appear to\n"
-
-    "affect its cellular structure.");
-
-
-
-const u8 gKECLEON"),
-    "A POKéMON that has the ability to alter its\n"
-
-    "body colors to match its surroundings.\n"
-
-    "A KECLEON reverts to its original colors if\n"
-
-    "it is startled.");
-
-
-
-const u8 gPOLICHOMBR"),
-    "This POKéMON roams about deep in the\n"
-
-    "night seeking such negative emotions as\n"
-
-    "grudges and envy. It retreats to its nest\n"
-
-    "when the sun begins to rise.");
-
-
-
-const u8 gBRANETTE"),
-    "An abandoned plush doll became this\n"
-
-    "POKéMON. They are said to live in garbage\n"
-
-    "dumps and wander about in search of the\n"
-
-    "children that threw them away.");
-
-
-
-const u8 gSKELÉNOX"),
-    "A glare from its single scarlet eye makes\n"
-
-    "even burly grown-ups freeze in utter fear.\n"
-
-    "It is a nocturnal POKéMON that roams\n"
-
-    "about under the cloak of darkness.");
-
-
-
-const u8 gTÉRACLOPE"),
-    "It is thought that its body is hollow with\n"
-
-    "only a spectral ball of fire burning inside.\n"
-
-    "However, no one has been able to\n"
-
-    "confirm this theory as fact.");
-
-
-
-const u8 gTROPIUS"),
-    "It flies by flapping its broad leaves.\n"
-
-    "The bunch of fruit that grows around its\n"
-
-    "neck is deliciously sweet. In the spring,\n"
-
-    "it scatters pollen from its neck.");
-
-
-
-const u8 gÉOKO"),
-    "They fly about very actively when the hot\n"
-
-    "season arrives. They communicate among\n"
-
-    "themselves using seven different and\n"
-
-    "distinguishing cries.");
-
-
-
-const u8 gABSOL"),
-    "It sharply senses even subtle changes in\n"
-
-    "the sky and the land to predict natural\n"
-
-    "disasters. It is a long-lived POKéMON that\n"
-
-    "has a life-span of 100 years.");
-
-
-
-const u8 gOKÉOKÉ"),
-    "A WYNAUT loves to eat sweet fruits.\n"
-
-    "It cleverly picks fruits using its earlike\n"
-
-    "arms. They gather in fruit gardens, drawn\n"
-
-    "by the fragrance.");
-
-
-
-const u8 gSTALGAMIN"),
-    "They tend to move about in groups of\n"
-
-    "around five SNORUNT. In snowy regions,\n"
-
-    "it is said that when they are seen late at\n"
-
-    "night, snowfall will arrive by morning.");
-
-
-
-const u8 gONIGLALI"),
-    "A GLALIE has the power to instantaneously\n"
-
-    "freeze moisture in the atmosphere.\n"
-
-    "A dazzling cloud of diamondlike ice\n"
-
-    "crystals forms around its body.");
-
-
-
-const u8 gOBALIE"),
-    "It is completely covered with plushy fur.\n"
-
-    "As a result, it never feels the cold even\n"
-
-    "when it is rolling about on ice floes or\n"
-
-    "diving in the sea.");
-
-
-
-const u8 gPHOGLEUR"),
-    "SEALEO live in herds on ice floes. Using its\n"
-
-    "powerful flippers, it shatters ice.\n"
-
-    "It dives into the sea to hunt prey five\n"
-
-    "times a day.");
-
-
-
-const u8 gKAIMORSE"),
-    "To protect its herd, the leader battles\n"
-
-    "anything that invades its territory, even\n"
-
-    "at the cost of its life. Its tusks may snap\n"
-
-    "off in battle.");
-
-
-
-const u8 gCOQUIPERL"),
-    "A CLAMPERL slams its shell closed on prey\n"
-
-    "to prevent escape. The pearl it creates\n"
-
-    "upon evolution is said to be infused with\n"
-
-    "a mysterious energy.");
-
-
-
-const u8 gSERPANG"),
-    "To withstand the crushing pressure of\n"
-
-    "water deep under the sea, its spine is very\n"
-
-    "thick and sturdy. Its tail, which is shaped\n"
-
-    "like a small fish, has eyes that light up.");
-
-
-
-const u8 gROSABYSS"),
-    "A GOREBYSS siphons the body fluids of prey\n"
-
-    "through its thin, tubular mouth. Its light\n"
-
-    "pink body color turns vivid when it\n"
-
-    "finishes feeding.");
-
-
-
-const u8 gRELICANTH"),
-    "A POKéMON that was once believed to have\n"
-
-    "been extinct. The species has not changed\n"
-
-    "its form for 100 million years. It walks on\n"
-
-    "the seafloor using its pectoral fins.");
-
-
-
-const u8 gLOVDISC"),
-    "LUVDISC make the branches of CORSOLA\n"
-
-    "their nests. There is a custom from long\n"
-
-    "ago of giving a LUVDISC as a gift to\n"
-
-    "express one's feelings of love.");
-
-
-
-const u8 gDRABY"),
-    "Although it is small, this POKéMON is very\n"
-
-    "powerful because its body is a bundle of\n"
-
-    "muscles. It launches head-butts with its\n"
-
-    "ironlike skull.");
-
-
-
-const u8 gDRACKHAUS"),
-    "It hardly eats while it awaits evolution.\n"
-
-    "It becomes hardier by enduring hunger.\n"
-
-    "Its shell peels off the instant it begins\n"
-
-    "to evolve.");
-
-
-
-const u8 gDRATTAK"),
-    "After many long years, its cellular\n"
-
-    "structure underwent a sudden mutation to\n"
-
-    "grow wings. When angered, it loses all\n"
-
-    "thought and rampages out of control.");
-
-
-
-const u8 gTERHAL"),
-    "When BELDUM gather in a swarm, they move\n"
-
-    "in perfect unison as if they were but one\n"
-
-    "POKéMON. They communicate with each other\n"
-
-    "using brain waves.");
-
-
-
-const u8 gMÉTANG"),
-    "The claws tipping its arms pack the\n"
-
-    "destructive power to tear through thick\n"
-
-    "iron sheets as if they were silk. It flies\n"
-
-    "at over 60 miles per hour.");
-
-
-
-const u8 gMÉTALOSSE"),
-    "METAGROSS has four brains that are joined\n"
-
-    "by a complex neural network. As a result of\n"
-
-    "integration, this POKéMON is smarter than\n"
-
-    "a supercomputer.");
-
-
-
-const u8 gREGIROCK"),
-    "A POKéMON that is made entirely of rocks\n"
-
-    "and boulders. If parts of its body chip off\n"
-
-    "in battle, REGIROCK repairs itself by\n"
-
-    "adding new rocks.");
-
-
-
-const u8 gREGICE"),
-    "Its entire body is made of Antarctic ice.\n"
-
-    "After extensive studies, researchers\n"
-
-    "believe the ice was formed during an\n"
-
-    "ice age.");
-
-
-
-const u8 gREGISTEEL"),
-    "Its body is harder than any other kind of\n"
-
-    "metal. The body metal is composed of a\n"
-
-    "mysterious substance. Not only is it hard,\n"
-
-    "it shrinks and stretches flexibly.");
-
-
-
-const u8 gLATIAS"),
-    "They make a small herd of only several\n"
-
-    "members. They rarely make contact with\n"
-
-    "people or other POKéMON. They disappear\n"
-
-    "if they sense enemies.");
-
-
-
-const u8 gLATIOS"),
-    "Even in hiding, it can detect the locations\n"
-
-    "of others and sense their emotions since\n"
-
-    "it has telepathy. Its intelligence allows\n"
-
-    "it to understand human languages.");
-
-
-
-const u8 gKYOGRE"),
-    "KYOGRE has appeared in mythology as the\n"
-
-    "creator of the sea. After long years of\n"
-
-    "feuding with GROUDON, it took to sleep at\n"
-
-    "the bottom of the sea.");
-
-
-
-const u8 gGROUDON"),
-    "GROUDON has appeared in mythology as the\n"
-
-    "creator of the land. It sleeps in magma\n"
-
-    "underground and is said to make volcanoes\n"
-
-    "erupt on awakening.");
-
-
-
-const u8 gRAYQUAZA"),
-    "A POKéMON that flies endlessly in the\n"
-
-    "ozone layer. It is said it would descend\n"
-
-    "to the ground if KYOGRE and GROUDON\n"
-
-    "were to fight.");
-
-
-
-const u8 gJIRACHI"),
-    "JIRACHI is said to make wishes come true.\n"
-
-    "While it sleeps, a tough crystalline shell\n"
-
-    "envelops the body to protect it from\n"
-
-    "enemies.");
-
-
-
-const u8 gDEOXYS"),
-    "A POKéMON that mutated from an\n"
-
-    "extraterrestrial virus exposed to a laser\n"
-
-    "beam. Its body is configured for superior\n"
-
-    "agility and speed.");
-
+const u8 gBulbasaurPokedexText[] = _(
+    "Au matin de sa vie, la graine sur son "
+    "dos lui fournit les éléments dont il a "
+    "besoin pour grandir. "
+);
+const u8 gIvysaurPokedexText[] = _(
+    "Lorsque le bourgeon sur son dos éclot, "
+    "il répand un doux parfum pour célébrer "
+    "sa floraison. "
+);
+const u8 gVenusaurPokedexText[] = _(
+    "Le parfum de sa fleur se fait plus "
+    "pénétrant les lendemains de pluie. Cela "
+    "appâte les autres Pokémon. "
+);
+const u8 gCharmanderPokedexText[] = _(
+    "Depuis sa naissance, une petite flamme "
+    "brûle au bout de sa queue. Si cette "
+    "flamme s’éteint, la vie de ce Pokémon "
+    "s’éteindra elle aussi. "
+);
+const u8 gCharmeleonPokedexText[] = _(
+    "En agitant sa queue, il peut élever la "
+    "température à un niveau incroyable. "
+);
+const u8 gCharizardPokedexText[] = _(
+    "Ses ailes peuvent le faire voler à plus "
+    "de 1 400 m d’altitude. Ce Pokémon "
+    "crache du feu à des températures très "
+    "élevées. "
+);
+const u8 gSquirtlePokedexText[] = _(
+    "Caché sous l’eau, il crache un jet "
+    "d’eau sur sa proie et se cache à "
+    "l’intérieur de sa carapace. "
+);
+const u8 gWartortlePokedexText[] = _(
+    "On prétend qu’il vit 10 000 ans. Sa "
+    "queue duveteuse est un symbole de "
+    "longévité populaire. "
+);
+const u8 gBlastoisePokedexText[] = _(
+    "Ce Pokémon brutal est armé de canons "
+    "hydrauliques. Ses puissants jets d’eau "
+    "sont dévastateurs. "
+);
+const u8 gCaterpiePokedexText[] = _(
+    "Ses pattes ont des ventouses lui "
+    "permettant de grimper sur toute "
+    "surface, notamment les arbres. "
+);
+const u8 gMetapodPokedexText[] = _(
+    "Il est vulnérable aux attaques tant que "
+    "sa carapace est molle, car il expose "
+    "son corps tendre et mou. "
+);
+const u8 gButterfreePokedexText[] = _(
+    "Ses ailes sont recouvertes d’une poudre "
+    "les protégeant de la pluie. Ce Pokémon "
+    "peut donc voler pendant de grosses "
+    "averses. "
+);
+const u8 gWeedlePokedexText[] = _(
+    "Son aiguillon empoisonné est très "
+    "dangereux. Son corps est coloré afin de "
+    "repousser ses ennemis. "
+);
+const u8 gKakunaPokedexText[] = _(
+    "Il se cache sous les feuilles et les "
+    "branches pour fuir les prédateurs en "
+    "attendant d’évoluer. "
+);
+const u8 gBeedrillPokedexText[] = _(
+    "On le voit souvent voler dans un "
+    "essaim. Il vole très rapidement, "
+    "piquant sans cesse ses adversaires de "
+    "son dard toxique. "
+);
+const u8 gPidgeyPokedexText[] = _(
+    "Ce Pokémon docile préfère éviter le "
+    "combat. Toutefois, il se montre très "
+    "féroce quand on l’agresse. "
+);
+const u8 gPidgeottoPokedexText[] = _(
+    "Il protège son territoire avec ardeur "
+    "et repousse à coups de bec tout intrus. "
+);
+const u8 gPidgeotPokedexText[] = _(
+    "Roucarnage déploie ses ailes "
+    "majestueuses pour effrayer ses ennemis. "
+    "Il peut voler à Mach 2. "
+);
+const u8 gRattataPokedexText[] = _(
+    "Les dents de Rattata sont longues et "
+    "tranchantes. Comme elles poussent sans "
+    "arrêt, il doit ronger tout ce qu’il "
+    "trouve pour pouvoir les tailler. "
+);
+const u8 gRaticatePokedexText[] = _(
+    "Ses pattes arrière lui permettent de "
+    "traverser les rivières. Il est toujours "
+    "en quête de nourriture. "
+);
+const u8 gSpearowPokedexText[] = _(
+    "Il chasse les insectes dans les hautes "
+    "herbes. Ses petites ailes lui "
+    "permettent de voler très vite. "
+);
+const u8 gFearowPokedexText[] = _(
+    "Il a assez d’énergie pour voler toute "
+    "la journée avec ses grandes ailes. Il "
+    "frappe de son bec acéré. "
+);
+const u8 gEkansPokedexText[] = _(
+    "Il se déplace en silence pour dévorer "
+    "des œufs de Roucool ou de Piafabec. "
+);
+const u8 gArbokPokedexText[] = _(
+    "Pour apeurer ses ennemis, il gonfle sa "
+    "poitrine et émet d’étranges sons avec "
+    "sa bouche. "
+);
+const u8 gPikachuPokedexText[] = _(
+    "Pikachu a de petites poches pleines "
+    "d’électricité sur ses joues. S’il se "
+    "sent menacé, il laisse s’échapper des "
+    "décharges électriques. "
+);
+const u8 gRaichuPokedexText[] = _(
+    "Il peut terrasser des ennemis bien plus "
+    "imposants en libérant une décharge de "
+    "100 000 V. "
+);
+const u8 gSandshrewPokedexText[] = _(
+    "Détestant l’eau, il vit dans de "
+    "profondes tanières des régions arides. "
+    "Il aime se rouler en boule. "
+);
+const u8 gSandslashPokedexText[] = _(
+    "Il se roule en boule hérissée de piques "
+    "s’il est menacé. Il peut ainsi s’enfuir "
+    "ou attaquer. "
+);
+const u8 gNidorinaPokedexText[] = _(
+    "Pour nourrir ses petits, il mâche les "
+    "aliments pour les rendre tendres et il "
+    "les recrache à ses bébés. "
+);
+const u8 gNidoqueenPokedexText[] = _(
+    "Son corps est recouvert d’écailles en "
+    "forme de pointes. Quand ce Pokémon "
+    "s’énerve, ses pointes se dressent de "
+    "façon menaçante. "
+);
+const u8 gNidorinoPokedexText[] = _(
+    "Très agressif, il est prompt à répondre "
+    "à la violence. La corne sur sa tête est "
+    "venimeuse. "
+);
+const u8 gNidokingPokedexText[] = _(
+    "Un coup de sa puissante queue peut "
+    "briser un poteau téléphonique comme une "
+    "allumette. "
+);
+const u8 gClefairyPokedexText[] = _(
+    "La lumière de la lune qu’il emmagasine "
+    "dans ses ailes dorsales lui permet de "
+    "flotter dans les airs. "
+);
+const u8 gClefablePokedexText[] = _(
+    "Ce Pokémon est une sorte de petite fée "
+    "très rare. Il court vite se cacher s’il "
+    "aperçoit un être humain. "
+);
+const u8 gVulpixPokedexText[] = _(
+    "Quand il est jeune, ce Pokémon a six "
+    "queues magnifiques. De nouvelles queues "
+    "apparaissent tout au long de sa "
+    "croissance. "
+);
+const u8 gNinetalesPokedexText[] = _(
+    "Il est très intelligent et rancunier. "
+    "Attrapez une de ses queues et il vous "
+    "maudira pour 1 000 ans. "
+);
+const u8 gJigglypuffPokedexText[] = _(
+    "En se gonflant, il peut chanter une "
+    "longue berceuse qui endort "
+    "inévitablement ses adversaires. "
+);
+const u8 gWigglytuffPokedexText[] = _(
+    "En cas de danger, il gonfle d’air son "
+    "corps doux et potelé dans des "
+    "proportions gigantesques. "
+);
+const u8 gZubatPokedexText[] = _(
+    "Comme il ne possède pas d’yeux, il "
+    "n’utilise que ses ultrasons pour se "
+    "déplacer dans les ténèbres. "
+);
+const u8 gGolbatPokedexText[] = _(
+    "Quand il se met à sucer du sang, il ne "
+    "s’arrête qu’une fois rassasié. C’est un "
+    "chasseur nocturne. "
+);
+const u8 gOddishPokedexText[] = _(
+    "Son nom scientifique est « Oddium "
+    "Wanderus ». Lorsqu’il fait nuit, il se "
+    "déplace à l’aide de ses racines pour "
+    "disséminer ses graines. "
+);
+const u8 gGloomPokedexText[] = _(
+    "L’odeur du nectar de sa bouche est si "
+    "répugnante qu’elle agresse les narines "
+    "à 2 km. "
+);
+const u8 gVileplumePokedexText[] = _(
+    "Il possède des pétales énormes. À "
+    "chaque pas, ils sèment d’épais nuages "
+    "de pollen toxique. "
+);
+const u8 gParasPokedexText[] = _(
+    "Il s’enfouit sous terre pour ronger des "
+    "racines afin de nourrir les champignons "
+    "sur son dos. "
+);
+const u8 gParasectPokedexText[] = _(
+    "Plus le champignon sur son dos grandit, "
+    "plus celui-ci émet des spores "
+    "puissantes dans l’air. "
+);
+const u8 gVenonatPokedexText[] = _(
+    "Il vit à l’ombre des grands arbres où "
+    "il se nourrit d’insectes. Il est attiré "
+    "par la lumière. "
+);
+const u8 gVenomothPokedexText[] = _(
+    "Ses ailes sont couvertes d’écailles "
+    "poudreuses. À chaque battement d’ailes, "
+    "il laisse tomber de la poudre hautement "
+    "toxique. "
+);
+const u8 gDiglettPokedexText[] = _(
+    "Son épiderme est très fin. S’il est "
+    "exposé au soleil, son sang se "
+    "réchauffe, ce qui l’affaiblit. "
+);
+const u8 gDugtrioPokedexText[] = _(
+    "Terriblement puissants, ils peuvent "
+    "creuser un tunnel dans tout type de sol "
+    "et jusqu’à 100 km de profondeur. "
+);
+const u8 gMeowthPokedexText[] = _(
+    "Il adore les pièces de monnaie. Il "
+    "hante les rues à la recherche de pièces "
+    "oubliées par les passants. "
+);
+const u8 gPersianPokedexText[] = _(
+    "Ses muscles souples lui permettent de "
+    "marcher sans un bruit et d’attaquer en "
+    "l’espace d’un instant. "
+);
+const u8 gPsyduckPokedexText[] = _(
+    "Il ne se souvient pas qu’il a des "
+    "pouvoirs psy. C’est pour cela qu’il a "
+    "l’air si confus. "
+);
+const u8 gGolduckPokedexText[] = _(
+    "Ses pattes arrière palmées font de ce "
+    "Pokémon un excellent nageur. On peut "
+    "souvent le voir nager élégamment dans "
+    "les lacs. "
+);
+const u8 gMankeyPokedexText[] = _(
+    "Ils vivent en colonies sylvestres. "
+    "Quand un Férosinge s’énerve, toute la "
+    "colonie suit son exemple. "
+);
+const u8 gPrimeapePokedexText[] = _(
+    "Ce Pokémon est constamment en rogne. "
+    "Lorsqu’il traque une proie, il la "
+    "pourchasse n’importe où, peu importe la "
+    "distance. "
+);
+const u8 gGrowlithePokedexText[] = _(
+    "Il est courageux et fier. Il se dresse "
+    "vaillamment devant ses ennemis même "
+    "s’ils sont plus puissants. "
+);
+const u8 gArcaninePokedexText[] = _(
+    "Son aboiement est tout simplement "
+    "majestueux. On ne peut que ramper à ses "
+    "pieds après l’avoir entendu. "
+);
+const u8 gPoliwagPokedexText[] = _(
+    "Le sens de la spirale sur son ventre "
+    "diffère selon son origine. Il préfère "
+    "la nage à la marche. "
+);
+const u8 gPoliwhirlPokedexText[] = _(
+    "Ses deux jambes sont très développées. "
+    "Bien qu’il puisse se déplacer sur la "
+    "terre ferme, ce Pokémon préfère vivre "
+    "sous l’eau. "
+);
+const u8 gPoliwrathPokedexText[] = _(
+    "Excellent nageur, il pratique le crawl "
+    "ou la nage papillon mieux qu’un "
+    "champion olympique. "
+);
+const u8 gAbraPokedexText[] = _(
+    "Il prévoit les attaques futures et se "
+    "téléporte pour se mettre à l’abri et "
+    "éviter le combat. "
+);
+const u8 gKadabraPokedexText[] = _(
+    "En utilisant ses pouvoirs, il émet des "
+    "ondes alpha et cause des distorsions "
+    "électroniques. "
+);
+const u8 gAlakazamPokedexText[] = _(
+    "Son cerveau hors du commun peut "
+    "effectuer des opérations à la vitesse "
+    "d’un ordinateur. Il a un QI de 5 000. "
+);
+const u8 gMachopPokedexText[] = _(
+    "Son corps est essentiellement composé "
+    "de muscles. Même s’il a la taille d’un "
+    "petit enfant, il peut soulever 100 "
+    "adultes avec ses bras. "
+);
+const u8 gMachokePokedexText[] = _(
+    "Il peut soulever un camion d’une main. "
+    "Il se sert de sa force pour aider dans "
+    "les tâches physiques. "
+);
+const u8 gMachampPokedexText[] = _(
+    "Il se sert de ses quatre bras pour "
+    "enserrer les membres de sa victime puis "
+    "il la projette au loin. "
+);
+const u8 gBellsproutPokedexText[] = _(
+    "Son bourgeon ressemble à un visage "
+    "humain. Selon la légende, Chétiflor "
+    "serait un type de mandragore "
+    "légendaire. "
+);
+const u8 gWeepinbellPokedexText[] = _(
+    "Il crache de la Poudre Toxik pour "
+    "immobiliser sa proie et il l’achève "
+    "avec de l’Acide. "
+);
+const u8 gVictreebelPokedexText[] = _(
+    "Tout corps ingéré par ce Pokémon est "
+    "systématiquement dissous en bouillie. "
+);
+const u8 gTentacoolPokedexText[] = _(
+    "Il vit en bord de mer. Les pêcheurs se "
+    "font souvent arroser d’acide quand ils "
+    "en accrochent un. "
+);
+const u8 gTentacruelPokedexText[] = _(
+    "Les 80 tentacules que Tentacruel laisse "
+    "s’agiter lui permettent d’injecter du "
+    "poison dans le corps de ses ennemis "
+    "mais aussi de les trancher. "
+);
+const u8 gGeodudePokedexText[] = _(
+    "Son corps se fond dans la roche. Les "
+    "Pokémon de cette espèce se bousculent "
+    "au cours d’épreuves de force. "
+);
+const u8 gGravelerPokedexText[] = _(
+    "Pour se déplacer, il dégringole le long "
+    "des pentes. Il pulvérise tous les "
+    "obstacles qui se trouvent sur son "
+    "passage. "
+);
+const u8 gGolemPokedexText[] = _(
+    "Aucun explosif ne pourrait entamer sa "
+    "carapace de pierre. Il mue une fois par "
+    "an. "
+);
+const u8 gPonytaPokedexText[] = _(
+    "Il muscle ses pattes en suivant ses "
+    "parents. Il arpente les plaines et les "
+    "montagnes toute la journée. "
+);
+const u8 gRapidashPokedexText[] = _(
+    "Son galop dépasse les 240 km/h. Il file "
+    "comme une flèche, laissant flotter sa "
+    "crinière ardente. "
+);
+const u8 gSlowpokePokedexText[] = _(
+    "Il est tellement paresseux qu’il lui "
+    "faut une journée pour remarquer qu’on "
+    "lui mord la queue. "
+);
+const u8 gSlowbroPokedexText[] = _(
+    "Un Kokiyas s’est un jour accroché à la "
+    "queue d’un Ramoloss qui pêchait et l’a "
+    "fait évoluer en Flagadoss. "
+);
+const u8 gMagnemitePokedexText[] = _(
+    "Il reste constamment en sustentation "
+    "pour se déplacer. Ce Pokémon peut "
+    "envoyer de l’électricité par les "
+    "aimants situés sur ses côtés. "
+);
+const u8 gMagnetonPokedexText[] = _(
+    "Il émet un signal radio étrange. Sa "
+    "présence augmente la température de 1 "
+    "°C dans un rayon de 1 000 m. "
+);
+const u8 gDoduoPokedexText[] = _(
+    "Ses deux cerveaux semblent communiquer "
+    "leurs émotions grâce à un lien "
+    "télépathique. "
+);
+const u8 gDodrioPokedexText[] = _(
+    "Une espèce étrange que l’on trouve "
+    "rarement. Les trois têtes représentent "
+    "la joie, la tristesse et la colère. "
+);
+const u8 gSeelPokedexText[] = _(
+    "Sa peau épaisse et dure est recouverte "
+    "d’une fourrure bleu clair. Elle permet "
+    "à ce Pokémon de résister aux "
+    "températures les plus glaciales. "
+);
+const u8 gDewgongPokedexText[] = _(
+    "Son corps hydrodynamique glisse dans "
+    "l’eau. Plus l’eau est froide plus il se "
+    "sent à l’aise. "
+);
+const u8 gGrimerPokedexText[] = _(
+    "Vivant dans des tas d’ordures, il se "
+    "nourrit des déchets polluants rejetés "
+    "par les usines. "
+);
+const u8 gMukPokedexText[] = _(
+    "Son corps exsude un fluide toxique qui "
+    "tue instantanément les plantes et les "
+    "arbres au contact. "
+);
+const u8 gShellderPokedexText[] = _(
+    "Il se referme sur un ennemi pour "
+    "attaquer, mais ceci le rend vulnérable "
+    "et il ne le fait que rarement. "
+);
+const u8 gCloysterPokedexText[] = _(
+    "Sa coquille est extrêmement résistante. "
+    "Rien ne peut la détruire, pas même une "
+    "bombe. Il ne l’ouvre que lorsqu’il "
+    "attaque. "
+);
+const u8 gGastlyPokedexText[] = _(
+    "Son corps composé de gaz toxique "
+    "pourrait asphyxier n’importe qui en "
+    "quelques secondes. "
+);
+const u8 gHaunterPokedexText[] = _(
+    "Il vole l’énergie vitale de l’ennemi "
+    "d’un coup de langue gazeuse. Il aime "
+    "chasser dans l’ombre. "
+);
+const u8 gGengarPokedexText[] = _(
+    "Il se cache dans l’ombre des passants "
+    "et vole leur chaleur. Ses victimes "
+    "ressentent alors un frisson. "
+);
+const u8 gOnixPokedexText[] = _(
+    "Onix vit généralement sous terre. Il "
+    "cherche de la nourriture en creusant à "
+    "plus de 80 km/h. "
+);
+const u8 gDrowzeePokedexText[] = _(
+    "Si vous pensez avoir rêvé mais que vous "
+    "ne vous en souvenez pas, c’est que "
+    "Soporifik a tout mangé. "
+);
+const u8 gHypnoPokedexText[] = _(
+    "La vue de son pendule oscillant endort "
+    "en trois secondes, même quand on vient "
+    "de se réveiller. "
+);
+const u8 gKrabbyPokedexText[] = _(
+    "On trouve ce Pokémon près de la mer. "
+    "Ses grosses pinces peuvent repousser si "
+    "elles se font arracher. "
+);
+const u8 gKinglerPokedexText[] = _(
+    "Sa pince devient énorme. S’il la "
+    "soulève trop vite, il risque de perdre "
+    "l’équilibre. "
+);
+const u8 gVoltorbPokedexText[] = _(
+    "Vivant près des centrales électriques, "
+    "ce Pokémon survolté est souvent "
+    "confondu avec une Poké Ball. "
+);
+const u8 gElectrodePokedexText[] = _(
+    "Il stocke tellement d’énergie dans son "
+    "corps qu’une simple secousse peut le "
+    "faire exploser. "
+);
+const u8 gExeggcutePokedexText[] = _(
+    "Même s’il ressemble à des œufs, ce "
+    "Pokémon appartient à la famille des "
+    "végétaux. "
+);
+const u8 gExeggutorPokedexText[] = _(
+    "On l’appelle « jungle sur pattes ». Si "
+    "une tête devient trop grosse, elle "
+    "tombe et produit un Noeunoeuf. "
+);
+const u8 gCubonePokedexText[] = _(
+    "Il porte constamment le crâne de sa "
+    "mère. Personne ne sait à quoi il "
+    "ressemble sans ce crâne. "
+);
+const u8 gMarowakPokedexText[] = _(
+    "L’os qu’il tient dans la main est son "
+    "arme la plus efficace. Il s’en sert "
+    "comme d’un boomerang pour assommer sa "
+    "proie. "
+);
+const u8 gHitmonleePokedexText[] = _(
+    "S’il commence à donner des séries de "
+    "coups de pied, ses jambes grandissent "
+    "et il gagne en allonge. "
+);
+const u8 gHitmonchanPokedexText[] = _(
+    "Tygnon possède l’esprit combatif des "
+    "plus grands champions de boxe. Ses "
+    "coups de poing partent plus vite qu’un "
+    "boulet de canon. "
+);
+const u8 gLickitungPokedexText[] = _(
+    "Sa langue fait deux fois la taille de "
+    "son corps. Il l’utilise comme un bras "
+    "pour saisir de la nourriture mais aussi "
+    "pour attaquer. "
+);
+const u8 gKoffingPokedexText[] = _(
+    "Il flotte en retenant des gaz plus "
+    "légers que l’air. Ceux-ci sont "
+    "explosifs, en plus d’être fétides. "
+);
+const u8 gWeezingPokedexText[] = _(
+    "Il peut arriver que deux Smogo mutent "
+    "et s’associent pour former un Smogogo, "
+    "mais c’est très rare. "
+);
+const u8 gRhyhornPokedexText[] = _(
+    "Ses petites jambes ne lui permettent "
+    "pas de tourner facilement. Il ne peut "
+    "charger que tout droit. "
+);
+const u8 gRhydonPokedexText[] = _(
+    "L’évolution a permis à ce Pokémon de "
+    "marcher sur ses pattes arrière. Il peut "
+    "facilement faire des trous dans les "
+    "rochers en utilisant sa corne. "
+);
+const u8 gChanseyPokedexText[] = _(
+    "Il peut pondre plusieurs œufs par jour. "
+    "Ses œufs sont très riches en nutriments "
+    "et vraiment délicieux. "
+);
+const u8 gTangelaPokedexText[] = _(
+    "Il paralyse tout ce qui bouge avec ses "
+    "lianes. Elles vous chatouillent si vous "
+    "êtes capturé. "
+);
+const u8 gKangaskhanPokedexText[] = _(
+    "Dans les endroits sûrs, le petit quitte "
+    "sa poche pour jouer sous la protection "
+    "des adultes. "
+);
+const u8 gHorseaPokedexText[] = _(
+    "Il niche à l’ombre du corail. Quand il "
+    "se sent menacé, il disparaît dans un "
+    "nuage d’encre opaque. "
+);
+const u8 gSeadraPokedexText[] = _(
+    "Il peut nager à l’envers en agitant ses "
+    "petites nageoires pectorales. "
+);
+const u8 gGoldeenPokedexText[] = _(
+    "Ses nageoires dorsales et pectorales "
+    "bougent avec élégance. Il est surnommé "
+    "le danseur des flots. "
+);
+const u8 gSeakingPokedexText[] = _(
+    "Il niche dans des rochers du ruisseau "
+    "qu’il évide avec sa corne. Il donnerait "
+    "sa vie pour ses Œufs. "
+);
+const u8 gStaryuPokedexText[] = _(
+    "On peut voir des Stari en grand nombre "
+    "près des côtes. La nuit, le centre de "
+    "son corps clignote d’une lumière rouge. "
+);
+const u8 gStarmiePokedexText[] = _(
+    "Un noyau rouge trône en son centre. Il "
+    "envoie des signaux radio mystérieux "
+    "vers le ciel nocturne. "
+);
+const u8 gScytherPokedexText[] = _(
+    "Il fauche les herbes avec ses lames "
+    "acérées. Il bouge si vite qu’on ne peut "
+    "le voir à l’œil nu. "
+);
+const u8 gJynxPokedexText[] = _(
+    "Il communique en utilisant un langage "
+    "qui semble être humain. Des recherches "
+    "sont en cours pour déterminer ce qu’il "
+    "dit. "
+);
+const u8 gElectabuzzPokedexText[] = _(
+    "Il adore se nourrir d’électricité. Il "
+    "apparaît occasionnellement près des "
+    "grandes centrales électriques. "
+);
+const u8 gMagmarPokedexText[] = _(
+    "Il est né au milieu d’un volcan. Son "
+    "corps est couvert de flammes qui "
+    "flambent comme un soleil. "
+);
+const u8 gPinsirPokedexText[] = _(
+    "Il attaque sauvagement avec ses cornes. "
+    "En hiver, il se cache au plus profond "
+    "des forêts. "
+);
+const u8 gTaurosPokedexText[] = _(
+    "Juste avant d’utiliser Charge, ce "
+    "Pokémon agite frénétiquement ses trois "
+    "grandes queues. "
+);
+const u8 gMagikarpPokedexText[] = _(
+    "La puissance de cette créature a "
+    "beaucoup régressé au fil des siècles. "
+);
+const u8 gGyaradosPokedexText[] = _(
+    "Gigantesque et maléfique, il est "
+    "capable de raser une ville entière dans "
+    "un accès de rage. "
+);
+const u8 gLaprasPokedexText[] = _(
+    "Son intelligence lui permet de "
+    "comprendre le langage des humains. Il "
+    "adore promener les gens sur son dos. "
+);
+const u8 gDittoPokedexText[] = _(
+    "Métamorph peut modifier sa structure "
+    "cellulaire à sa guise pour se "
+    "transformer en n’importe quelle forme "
+    "vivante. "
+);
+const u8 gEeveePokedexText[] = _(
+    "L’ADN de ce Pokémon très particulier "
+    "recèle de nombreuses possibilités "
+    "d’évolution. "
+);
+const u8 gVaporeonPokedexText[] = _(
+    "Il a évolué pour s’adapter au milieu "
+    "aquatique. Il peut se fondre et "
+    "disparaître dans l’élément liquide. "
+);
+const u8 gJolteonPokedexText[] = _(
+    "Il se charge d’électricité statique "
+    "pour envoyer des décharges de 10 000 V. "
+);
+const u8 gFlareonPokedexText[] = _(
+    "Pyroli a une poche de feu à l’intérieur "
+    "de son corps. Après une bonne "
+    "inspiration, il est capable de "
+    "recracher des flammes à 1 700 °C. "
+);
+const u8 gPorygonPokedexText[] = _(
+    "Ce Pokémon est fait de programmes et "
+    "d’algorithmes. Il peut survivre en "
+    "milieu virtuel. "
+);
+const u8 gOmanytePokedexText[] = _(
+    "Recréé à partir d’un fossile, il "
+    "utilise l’air dans sa coquille pour "
+    "s’enfoncer dans l’eau ou faire surface. "
+);
+const u8 gOmastarPokedexText[] = _(
+    "Une fois enroulé autour de sa proie, il "
+    "ne la laisse pas repartir et la dévore "
+    "avec ses crocs. "
+);
+const u8 gKabutoPokedexText[] = _(
+    "Ce Pokémon a été reconstitué à partir "
+    "du fossile d’une ancienne créature. Il "
+    "se protège à l’aide de sa carapace. "
+);
+const u8 gKabutopsPokedexText[] = _(
+    "C’est un très bon nageur. Il lacère sa "
+    "proie de ses longues griffes et en "
+    "absorbe les fluides corporels. "
+);
+const u8 gAerodactylPokedexText[] = _(
+    "Ce terrible Pokémon a dominé les cieux "
+    "d’une autre époque, terrorisant ses "
+    "ennemis. "
+);
+const u8 gSnorlaxPokedexText[] = _(
+    "Son estomac peut digérer n’importe quel "
+    "type de nourriture, même quand elle est "
+    "moisie ou pourrie. "
+);
+const u8 gArticunoPokedexText[] = _(
+    "Le légendaire oiseau des glaces. On dit "
+    "qu’il apparaît aux gens perdus dans les "
+    "sommets. "
+);
+const u8 gZapdosPokedexText[] = _(
+    "Un Pokémon Oiseau légendaire dont on "
+    "dit qu’il vit dans les nuages d’orage. "
+    "Il contrôle la foudre. "
+);
+const u8 gMoltresPokedexText[] = _(
+    "L’un des Pokémon Oiseaux légendaires. "
+    "On dit que sa venue annonce l’arrivée "
+    "du printemps. "
+);
+const u8 gDratiniPokedexText[] = _(
+    "Ce Pokémon est plein de vitalité. Il "
+    "mue et grandit très régulièrement. "
+);
+const u8 gDragonairPokedexText[] = _(
+    "Un Pokémon légendaire plein de charme. "
+    "Il peut contrôler les variations "
+    "climatiques. "
+);
+const u8 gDragonitePokedexText[] = _(
+    "On raconte qu’il vit quelque part en "
+    "mer. Il guide les équipages naufragés "
+    "jusqu’à la terre ferme. "
+);
+const u8 gMewtwoPokedexText[] = _(
+    "Un Pokémon conçu en réorganisant les "
+    "gènes de Mew. On raconte qu’il s’agit "
+    "du Pokémon le plus féroce. "
+);
+const u8 gMewPokedexText[] = _(
+    "Son ADN contient les codes génétiques "
+    "de tous les Pokémon. Il peut utiliser "
+    "nombre de techniques. "
+);
+const u8 gChikoritaPokedexText[] = _(
+    "Il jauge la température et l’humidité "
+    "grâce à la feuille sur sa tête. Il "
+    "raffole des bains de soleil. "
+);
+const u8 gBayleefPokedexText[] = _(
+    "Le collier de bourgeons à son cou "
+    "répand un arôme épicé qui vous donne du "
+    "tonus. "
+);
+const u8 gMeganiumPokedexText[] = _(
+    "Le souffle de Méganium a le pouvoir de "
+    "redonner la santé aux plantes malades "
+    "ou mortes. "
+);
+const u8 gCyndaquilPokedexText[] = _(
+    "Ce Pokémon est un grand timide. Les "
+    "flammes sur son dos s’intensifient "
+    "lorsqu’il prend peur. "
+);
+const u8 gQuilavaPokedexText[] = _(
+    "Attention ! Quand il tourne le dos dans "
+    "un combat, c’est qu’il va attaquer avec "
+    "ses flammes dorsales. "
+);
+const u8 gTyphlosionPokedexText[] = _(
+    "Il a un coup secret dévastateur. En "
+    "frottant sa fourrure ardente, il crée "
+    "une forte explosion. "
+);
+const u8 gTotodilePokedexText[] = _(
+    "Sa mâchoire surdéveloppée est capable "
+    "de tout broyer. Même son Dresseur doit "
+    "s’en méfier. "
+);
+const u8 gCroconawPokedexText[] = _(
+    "Quand il mord, il ne lâche pas prise "
+    "avant que ses crocs se brisent. Ils "
+    "repoussent par la suite. "
+);
+const u8 gFeraligatrPokedexText[] = _(
+    "Quand il mord avec sa puissante "
+    "mâchoire, il secoue sa tête pour "
+    "déchiqueter sa pauvre victime. "
+);
+const u8 gSentretPokedexText[] = _(
+    "Il se tient dressé sur sa queue pour "
+    "voir les ennemis arriver de loin. À ce "
+    "moment, il avertit ses amis. "
+);
+const u8 gFurretPokedexText[] = _(
+    "Il fabrique un nid qui convient à son "
+    "corps très fin, et où lui seul peut "
+    "entrer. "
+);
+const u8 gHoothootPokedexText[] = _(
+    "Il se tient toujours sur un pied. Il "
+    "change de pied si vite qu’on peut à "
+    "peine distinguer ce mouvement. "
+);
+const u8 gNoctowlPokedexText[] = _(
+    "Quand il réfléchit, il tourne sa tête "
+    "sur 180° pour optimiser son mode de "
+    "pensée. "
+);
+const u8 gLedybaPokedexText[] = _(
+    "Il est timide et reste près de ses "
+    "semblables. Il a un sens du toucher "
+    "très développé. "
+);
+const u8 gLedianPokedexText[] = _(
+    "Les points sur son dos deviennent plus "
+    "grands ou plus petits selon le nombre "
+    "d’étoiles dans le ciel. "
+);
+const u8 gSpinarakPokedexText[] = _(
+    "Il reste immobile dans sa toile pendant "
+    "des jours. Il attend que sa proie se "
+    "rapproche pour la capturer. "
+);
+const u8 gAriadosPokedexText[] = _(
+    "Il attache un fil à sa proie avant de "
+    "la libérer. Il s’en servira pour la "
+    "retrouver, elle et ses amis. "
+);
+const u8 gCrobatPokedexText[] = _(
+    "Ses quatre ailes lui permettent de "
+    "voler furtivement pour approcher ses "
+    "proies sans les effrayer. "
+);
+const u8 gChinchouPokedexText[] = _(
+    "Il émet avec ses antennes des "
+    "impulsions positives et négatives qui "
+    "peuvent électrocuter ses ennemis. "
+);
+const u8 gLanturnPokedexText[] = _(
+    "Il aveugle sa proie avec une lumière "
+    "intense, puis l’avale d’un seul trait "
+    "une fois immobilisée. "
+);
+const u8 gPichuPokedexText[] = _(
+    "Il ne sait pas encore stocker "
+    "l’électricité. Il envoie des décharges "
+    "par jeu ou par peur. "
+);
+const u8 gCleffaPokedexText[] = _(
+    "On en voit beaucoup lorsque le ciel se "
+    "remplit d’étoiles filantes. Ils "
+    "s’éclipsent au lever du soleil. "
+);
+const u8 gIgglybuffPokedexText[] = _(
+    "Son corps est très doux. Quand il "
+    "commence à rebondir, il est impossible "
+    "de l’arrêter. "
+);
+const u8 gTogepiPokedexText[] = _(
+    "Un proverbe nous enseigne que le "
+    "bonheur touchera celui qui peut faire "
+    "tenir debout un Togepi endormi. "
+);
+const u8 gTogeticPokedexText[] = _(
+    "On dit qu’il n’apparaît qu’aux cœurs "
+    "purs et qu’il leur apporte la joie et "
+    "le bonheur. "
+);
+const u8 gNatuPokedexText[] = _(
+    "Il cherche sa nourriture par terre, "
+    "mais quelquefois il grimpe aux arbres "
+    "pour manger. "
+);
+const u8 gXatuPokedexText[] = _(
+    "On dit qu’il est calme et tranquille "
+    "car il peut voir en permanence le passé "
+    "et le futur. "
+);
+const u8 gMareepPokedexText[] = _(
+    "Il garde une grande quantité d’air dans "
+    "sa toison pour ne pas subir les "
+    "variations de température. "
+);
+const u8 gFlaaffyPokedexText[] = _(
+    "Sa queue s’allume lorsque sa laine se "
+    "charge d’électricité. Il projette des "
+    "poils électrifiés. "
+);
+const u8 gAmpharosPokedexText[] = _(
+    "Le bout de sa queue brille si fort "
+    "qu’il peut être vu de très loin. Il "
+    "sert de balise aux gens. "
+);
+const u8 gBellossomPokedexText[] = _(
+    "À la fin de la saison des pluies, il "
+    "sort danser en plein air, attiré par la "
+    "chaleur du soleil. "
+);
+const u8 gMarillPokedexText[] = _(
+    "Le bout de sa queue renferme une huile "
+    "plus légère que l’eau qui fait office "
+    "de flotteur. "
+);
+const u8 gAzumarillPokedexText[] = _(
+    "Les motifs sur son ventre lui "
+    "permettent de se camoufler lorsqu’il "
+    "est dans l’eau. "
+);
+const u8 gSudowoodoPokedexText[] = _(
+    "Il se déguise en arbre pour éviter les "
+    "problèmes. Il déteste l’eau et se cache "
+    "par temps de pluie. "
+);
+const u8 gPolitoedPokedexText[] = _(
+    "Si Ptitard et Têtarte entendent son "
+    "cri, ils se rassemblent pour venir le "
+    "rencontrer. "
+);
+const u8 gHoppipPokedexText[] = _(
+    "Il dérive avec le vent. Sa présence en "
+    "nombre dans les champs et les montagnes "
+    "annonce le printemps. "
+);
+const u8 gSkiploomPokedexText[] = _(
+    "Il étend ses pétales pour absorber la "
+    "lumière du soleil. Il flotte pour se "
+    "rapprocher du soleil. "
+);
+const u8 gJumpluffPokedexText[] = _(
+    "Même sous un vent très violent, il "
+    "contrôle sa destination en bougeant ses "
+    "appendices. "
+);
+const u8 gAipomPokedexText[] = _(
+    "Sa queue est si forte qu’il peut "
+    "l’utiliser pour se suspendre aux "
+    "branches des arbres. "
+);
+const u8 gSunkernPokedexText[] = _(
+    "Il vit en buvant la rosée sur les "
+    "feuilles. On dit qu’il ne peut rien "
+    "avaler d’autre. "
+);
+const u8 gSunfloraPokedexText[] = _(
+    "Les rayons du soleil lui donnent de "
+    "l’énergie. Il est connu pour migrer "
+    "vers les régions ensoleillées. "
+);
+const u8 gYanmaPokedexText[] = _(
+    "En battant des ailes très vite, il peut "
+    "générer une violente onde de choc qui "
+    "peut briser les fenêtres. "
+);
+const u8 gWooperPokedexText[] = _(
+    "Il émerge de l’eau lorsque l’air se "
+    "rafraîchit pour partir chasser sur les "
+    "berges. "
+);
+const u8 gQuagsirePokedexText[] = _(
+    "Ce Pokémon est très insouciant. Quand "
+    "il nage, il fonce tête la première dans "
+    "la coque des bateaux. "
+);
+const u8 gEspeonPokedexText[] = _(
+    "Sa fourrure ultrasensible détecte les "
+    "vibrations de l’air. Il peut ainsi "
+    "prédire le temps ou lire les pensées "
+    "adverses. "
+);
+const u8 gUmbreonPokedexText[] = _(
+    "Quand il s’expose à la lumière de la "
+    "lune, ses anneaux brillent et il "
+    "développe de mystérieux pouvoirs. "
+);
+const u8 gMurkrowPokedexText[] = _(
+    "Craint et peu aimé, il paraît qu’il "
+    "porte malheur à ceux qui croisent son "
+    "chemin la nuit. "
+);
+const u8 gSlowkingPokedexText[] = _(
+    "Une fois sa tête mordue, des toxines "
+    "ont envahi Ramoloss et lui ont conféré "
+    "des pouvoirs immenses. "
+);
+const u8 gMisdreavusPokedexText[] = _(
+    "Il pousse des hurlements la nuit pour "
+    "effrayer les gens. "
+);
+const u8 gUnownPokedexText[] = _(
+    "Il rappelle une écriture ancienne. "
+    "Reste à savoir qui du langage ou de "
+    "Zarbi est apparu en premier. "
+);
+const u8 gWobbuffetPokedexText[] = _(
+    "Pour cacher sa queue noire, il vit "
+    "discrètement dans l’obscurité. Il "
+    "n’attaque jamais le premier. "
+);
+const u8 gGirafarigPokedexText[] = _(
+    "Sa queue possède un cerveau. Si vous "
+    "vous en approchez, elle vous sentira et "
+    "vous mordra. "
+);
+const u8 gPinecoPokedexText[] = _(
+    "Il ressemble à une pomme de pin. Sa "
+    "carapace le protège des Pokémon Oiseaux "
+    "qui le picorent par erreur. "
+);
+const u8 gForretressPokedexText[] = _(
+    "Il est totalement fixé à son arbre. Il "
+    "lance des morceaux de sa carapace pour "
+    "faire fuir son ennemi. "
+);
+const u8 gDunsparcePokedexText[] = _(
+    "Son nid est un véritable labyrinthe "
+    "qu’il creuse à l’aide de sa queue. Il "
+    "sait à peine voler. "
+);
+const u8 gGligarPokedexText[] = _(
+    "Il vole droit vers le visage de sa "
+    "cible effrayée et s’y accroche pour lui "
+    "injecter son poison. "
+);
+const u8 gSteelixPokedexText[] = _(
+    "Ses mâchoires robustes peuvent broyer "
+    "la pierre. Ses yeux percent la pénombre "
+    "souterraine. "
+);
+const u8 gSnubbullPokedexText[] = _(
+    "Son visage horrible fait fuir les "
+    "petits Pokémon. Par contre, les femmes "
+    "le trouvent mignon. "
+);
+const u8 gGranbullPokedexText[] = _(
+    "Il peut faire fuir presque tous les "
+    "Pokémon en ouvrant très largement sa "
+    "mâchoire. "
+);
+const u8 gQwilfishPokedexText[] = _(
+    "Son corps est recouvert de pics "
+    "provenant de ses écailles. Ils "
+    "sécrètent un poison étourdissant. "
+);
+const u8 gScizorPokedexText[] = _(
+    "Son corps est dur comme l’acier. Il "
+    "intimide ses ennemis en levant ses "
+    "pinces pareilles à des yeux. "
+);
+const u8 gShucklePokedexText[] = _(
+    "Il garde des Baies dans sa coquille. "
+    "Pour éviter les attaques, il "
+    "s’immobilise sous un rocher. "
+);
+const u8 gHeracrossPokedexText[] = _(
+    "Sa force herculéenne lui permet de "
+    "soulever et de jeter plus de 100 fois "
+    "son poids. "
+);
+const u8 gSneaselPokedexText[] = _(
+    "Ses griffes sont cachées dans ses "
+    "pattes. S’il est attaqué, il les sort "
+    "pour frapper ses ennemis. "
+);
+const u8 gTeddiursaPokedexText[] = _(
+    "Il se fait des réserves de nourriture "
+    "dans des cachettes avant l’arrivée de "
+    "l’hiver. "
+);
+const u8 gUrsaringPokedexText[] = _(
+    "Bien que d’une large corpulence, il "
+    "grimpe aux arbres pour s’y nourrir et y "
+    "dormir. "
+);
+const u8 gSlugmaPokedexText[] = _(
+    "Son corps est fait de magma. S’il cesse "
+    "de bouger, il refroidit et durcit. "
+);
+const u8 gMagcargoPokedexText[] = _(
+    "Son corps en ébullition est aussi chaud "
+    "que de la lave. Des flammes sortent de "
+    "sa coquille. "
+);
+const u8 gSwinubPokedexText[] = _(
+    "S’il sent une odeur attirante, il fonce "
+    "tête baissée pour en trouver l’origine. "
+);
+const u8 gPiloswinePokedexText[] = _(
+    "Ses yeux sont masqués par ses longs "
+    "poils. Il ne voit rien et se déplace en "
+    "chargeant. "
+);
+const u8 gCorsolaPokedexText[] = _(
+    "On le trouve souvent dans les mers "
+    "claires du sud. L’eau polluée décolore "
+    "son corail et le fait dépérir. "
+);
+const u8 gRemoraidPokedexText[] = _(
+    "Se servant de sa nageoire dorsale, il "
+    "s’accroche sous un Démanta pour "
+    "récupérer ses restes. "
+);
+const u8 gOctilleryPokedexText[] = _(
+    "Il capture ses ennemis avec ses "
+    "tentacules et les écrase ensuite avec "
+    "sa tête dure comme la pierre. "
+);
+const u8 gDelibirdPokedexText[] = _(
+    "Il passe ses journées à transporter de "
+    "la nourriture. Il l’offre souvent aux "
+    "gens égarés en montagne. "
+);
+const u8 gMantinePokedexText[] = _(
+    "Il ignore royalement les Rémoraid qui "
+    "s’accrochent à ses nageoires pour "
+    "manger les restes qu’il sème. "
+);
+const u8 gSkarmoryPokedexText[] = _(
+    "Son corps est prisonnier d’une armure "
+    "dure comme l’acier, mais il vole à plus "
+    "de 300 km/h. "
+);
+const u8 gHoundourPokedexText[] = _(
+    "Pour traquer leur proie, ils se "
+    "localisent mutuellement avec des "
+    "aboiements compris par eux seuls. "
+);
+const u8 gHoundoomPokedexText[] = _(
+    "En colère, il crache des flammes "
+    "contenant une toxine qui peut causer "
+    "des dégâts irréversibles. "
+);
+const u8 gKingdraPokedexText[] = _(
+    "Il emmagasine de l’énergie en restant "
+    "dans les fonds marins, là où rien "
+    "d’autre ne peut survivre. "
+);
+const u8 gPhanpyPokedexText[] = _(
+    "Il est fort malgré son aspect ramassé. "
+    "Il n’a aucun mal à porter un humain "
+    "adulte sur son dos. "
+);
+const u8 gDonphanPokedexText[] = _(
+    "Plus grandes sont ses défenses, plus "
+    "haut est son rang dans le troupeau. "
+    "Elles poussent lentement. "
+);
+const u8 gPorygon2PokedexText[] = _(
+    "On lui a installé un logiciel de "
+    "terraformation pour lui permettre de "
+    "travailler dans l’espace. "
+);
+const u8 gStantlerPokedexText[] = _(
+    "Ses bois tordus changent le flot de "
+    "l’air et créent une distorsion spatiale "
+    "dans la réalité. "
+);
+const u8 gSmearglePokedexText[] = _(
+    "Arrivé à l’âge adulte, il laisse ses "
+    "camarades poser leur empreinte de patte "
+    "sur son dos. "
+);
+const u8 gTyroguePokedexText[] = _(
+    "Pour augmenter ses capacités, il "
+    "cherche à se battre contre n’importe "
+    "qui. Il est très courageux. "
+);
+const u8 gHitmontopPokedexText[] = _(
+    "Si sa danse de coups de pied vous "
+    "fascine, vous risquez de le regretter. "
+);
+const u8 gSmoochumPokedexText[] = _(
+    "Il goûte à tout du bout des lèvres. "
+    "Elles gardent en mémoire ses goûts et "
+    "ses dégoûts. "
+);
+const u8 gElekidPokedexText[] = _(
+    "Ses cornes s’illuminent lorsqu’il fait "
+    "tourner ses bras pour générer de "
+    "l’électricité. "
+);
+const u8 gMagbyPokedexText[] = _(
+    "Son sang est chaud comme du magma et la "
+    "température de son corps peut atteindre "
+    "600 °C. "
+);
+const u8 gMiltankPokedexText[] = _(
+    "Son lait est très nutritif. C’est une "
+    "boisson parfaite pour les malades et "
+    "les personnes âgées. "
+);
+const u8 gBlisseyPokedexText[] = _(
+    "Ce Pokémon au cœur d’or soigne les "
+    "Pokémon malades. Il ressent la "
+    "tristesse d’autrui. "
+);
+const u8 gRaikouPokedexText[] = _(
+    "Ce terrible Pokémon emmagasine de "
+    "l’énergie puis court en lançant de "
+    "puissants éclairs. "
+);
+const u8 gEnteiPokedexText[] = _(
+    "On raconte qu’à chaque fois qu’il "
+    "rugit, un volcan entre en éruption "
+    "quelque part. "
+);
+const u8 gSuicunePokedexText[] = _(
+    "Il serait la réincarnation du vent du "
+    "nord. Il peut purifier instantanément "
+    "les eaux polluées. "
+);
+const u8 gLarvitarPokedexText[] = _(
+    "Il vit très profond sous terre. Il n’en "
+    "sort pour évoluer qu’après avoir dévoré "
+    "tout ce qui l’entourait. "
+);
+const u8 gPupitarPokedexText[] = _(
+    "Sa carapace est aussi dure que la "
+    "pierre et il est très fort. Ses coups "
+    "peuvent raser une montagne. "
+);
+const u8 gTyranitarPokedexText[] = _(
+    "Lorsqu’il est en colère, il abat des "
+    "montagnes et enterre des fleuves. On "
+    "doit alors modifier les cartes. "
+);
+const u8 gLugiaPokedexText[] = _(
+    "Il est supposé être le gardien des sept "
+    "mers. On raconte qu’il est apparu une "
+    "nuit de forte tempête. "
+);
+const u8 gCelebiPokedexText[] = _(
+    "Il a le pouvoir de voyager dans le "
+    "temps. Cependant, on dit qu’il "
+    "n’apparaît qu’en temps de paix. "
+);
+const u8 gTreeckoPokedexText[] = _(
+    "Les épines de ses plantes de pieds lui "
+    "permettent de marcher aux murs et au "
+    "plafond sans tomber. "
+);
+const u8 gGrovylePokedexText[] = _(
+    "Il vit dans les jungles denses. Il "
+    "saute de branche en branche pour "
+    "approcher de sa proie. "
+);
+const u8 gSceptilePokedexText[] = _(
+    "Il parcourt la jungle avec agilité et "
+    "attaque ses proies grâce aux feuilles "
+    "tranchantes sur ses bras. "
+);
+const u8 gTorchicPokedexText[] = _(
+    "Ses câlins réchauffent car il renferme "
+    "une fournaise. Il envoie des boules de "
+    "feu à 1 000 °C. "
+);
+const u8 gCombuskenPokedexText[] = _(
+    "Au combat, les flammes dans son corps "
+    "redoublent d’intensité. Ses coups de "
+    "pied sont dévastateurs. "
+);
+const u8 gMudkipPokedexText[] = _(
+    "Il analyse le courant grâce à la "
+    "nageoire sur sa tête. Il est assez fort "
+    "pour soulever des rochers. "
+);
+const u8 gMarshtompPokedexText[] = _(
+    "À force de marcher et de vivre dans la "
+    "boue, son arrière-train est devenu "
+    "particulièrement robuste. "
+);
+const u8 gSwampertPokedexText[] = _(
+    "Il peut traîner un grand bateau en "
+    "nageant. Il assomme l’ennemi d’un grand "
+    "coup de ses bras épais. "
+);
+const u8 gPoochyenaPokedexText[] = _(
+    "Medhyèna est d’un tempérament tenace. "
+    "Son odorat très développé lui permet de "
+    "ne jamais perdre la trace de sa proie. "
+);
+const u8 gMightyenaPokedexText[] = _(
+    "Les Grahyèna forment des meutes de dix "
+    "qui excellent au travail de groupe pour "
+    "capturer leurs proies. "
+);
+const u8 gZigzagoonPokedexText[] = _(
+    "Un Pokémon d’une curiosité insatiable. "
+    "Il montre de l’intérêt pour tout ce qui "
+    "l’entoure et passe d’un endroit à un "
+    "autre en zigzaguant pour tout regarder. "
+);
+const u8 gLinoonePokedexText[] = _(
+    "Il fonce sur sa proie à plus de 100 "
+    "km/h. Mais il ne peut pas dévier sa "
+    "course et loupe souvent sa cible. "
+);
+const u8 gWurmplePokedexText[] = _(
+    "Il habite les forêts et les hautes "
+    "herbes. Attaqué, il riposte avec les "
+    "piquants de son postérieur. "
+);
+const u8 gSilcoonPokedexText[] = _(
+    "Il boit la rosée récoltée par sa soie "
+    "en attendant d’évoluer. Il est à l’abri "
+    "dans son robuste cocon. "
+);
+const u8 gBeautiflyPokedexText[] = _(
+    "Il est très agressif. Il pique sa proie "
+    "avec son long museau étroit et absorbe "
+    "sa vitalité. "
+);
+const u8 gCascoonPokedexText[] = _(
+    "Rancunier, il n’oublie aucune des "
+    "attaques subies dans le cocon et se "
+    "venge une fois qu’il a évolué. "
+);
+const u8 gDustoxPokedexText[] = _(
+    "Quand on l’attaque, il bat des ailes "
+    "pour répandre sa poudre toxique. Il "
+    "sort après le coucher du soleil. "
+);
+const u8 gLotadPokedexText[] = _(
+    "Nénupiot recherche toujours les coins "
+    "où coule de l’eau pure. S’il reste "
+    "longtemps sans boire, la feuille sur sa "
+    "tête commence à faner. "
+);
+const u8 gLombrePokedexText[] = _(
+    "C’est un mauvais plaisantin. Quand il "
+    "repère un pêcheur, il tire sur sa ligne "
+    "pour le déranger. "
+);
+const u8 gLudicoloPokedexText[] = _(
+    "Les cellules de Ludicolo s’activent "
+    "s’il entend une musique entraînante, le "
+    "rendant encore plus puissant. "
+);
+const u8 gSeedotPokedexText[] = _(
+    "Il ressemble à un gland pendu à une "
+    "branche. Il adore effrayer les autres "
+    "Pokémon. "
+);
+const u8 gNuzleafPokedexText[] = _(
+    "Il vit au plus profond des forêts. Le "
+    "son de sa flûte, faite avec la feuille "
+    "de sa tête, est inquiétant. "
+);
+const u8 gShiftryPokedexText[] = _(
+    "D’un coup de sa feuille éventail, il "
+    "génère des bourrasques de 30 m/s "
+    "capables de souffler une maison. "
+);
+const u8 gTaillowPokedexText[] = _(
+    "Nirondelle ne supporte pas les saisons "
+    "froides. Il vole vers d’autres terres à "
+    "la recherche de chaleur et peut ainsi "
+    "parcourir 300 km par jour. "
+);
+const u8 gSwellowPokedexText[] = _(
+    "Une fois sa proie repérée, il fond sur "
+    "elle en un éclair et la capture avec "
+    "ses griffes acérées. "
+);
+const u8 gWingullPokedexText[] = _(
+    "Il niche sur les falaises escarpées "
+    "face à la mer. Il vole en altitude "
+    "grâce aux courants ascendants. "
+);
+const u8 gPelipperPokedexText[] = _(
+    "Ce messager du ciel transporte petits "
+    "Pokémon et Œufs dans son bec en toute "
+    "sécurité. "
+);
+const u8 gRaltsPokedexText[] = _(
+    "Il est très sensible aux émotions des "
+    "gens et des Pokémon. Il se cache au "
+    "moindre signe d’hostilité. "
+);
+const u8 gKirliaPokedexText[] = _(
+    "Il peut distordre l’espace-temps grâce "
+    "à ses pouvoirs psy et ainsi voir "
+    "l’avenir. "
+);
+const u8 gGardevoirPokedexText[] = _(
+    "Gardevoir est capable de prédire "
+    "l’avenir. Sa puissance augmente quand "
+    "il protège son Dresseur. "
+);
+const u8 gSurskitPokedexText[] = _(
+    "Il semble patiner sur l’eau. Le parfum "
+    "diffusé par le sommet de sa tête sert à "
+    "attirer ses proies. "
+);
+const u8 gMasquerainPokedexText[] = _(
+    "Ses quatre ailes permettent à ce "
+    "Pokémon de voler dans toutes les "
+    "directions. "
+);
+const u8 gShroomishPokedexText[] = _(
+    "Le sommet de sa tête libère des spores "
+    "empoisonnées. Il est dangereux de les "
+    "inhaler. "
+);
+const u8 gBreloomPokedexText[] = _(
+    "Il frappe de toutes ses forces ses "
+    "ennemis étourdis par ses spores "
+    "empoisonnées. "
+);
+const u8 gSlakothPokedexText[] = _(
+    "Il dort 20 heures par jour et ne fait "
+    "rien d’autre, si ce n’est manger trois "
+    "ou quatre feuilles dans la journée. "
+);
+const u8 gVigorothPokedexText[] = _(
+    "Quand il ne bouge pas, il accumule du "
+    "stress et devient très irritable. "
+);
+const u8 gSlakingPokedexText[] = _(
+    "C’est le Pokémon le plus paresseux du "
+    "monde. Il est cependant capable de "
+    "libérer une puissance phénoménale en "
+    "une seule attaque. "
+);
+const u8 gNincadaPokedexText[] = _(
+    "Il peut passer jusqu’à dix ans sous "
+    "terre. Les racines des arbres "
+    "constituent son régime alimentaire. "
+);
+const u8 gNinjaskPokedexText[] = _(
+    "Il bouge si vite que l’œil a parfois du "
+    "mal à le suivre. Les Pokémon de cette "
+    "espèce se regroupent près de la sève "
+    "des arbres. "
+);
+const u8 gShedinjaPokedexText[] = _(
+    "Un Pokémon étrange que l’on trouve dans "
+    "les Poké Balls après l’évolution d’un "
+    "Ningale. "
+);
+const u8 gWhismurPokedexText[] = _(
+    "Il repousse ses ennemis grâce à un cri "
+    "aussi puissant que le bruit d’un avion "
+    "à réaction. "
+);
+const u8 gLoudredPokedexText[] = _(
+    "L’onde de choc provoquée par son cri "
+    "peut renverser un camion. Il trépigne "
+    "pour augmenter sa force. "
+);
+const u8 gExploudPokedexText[] = _(
+    "Au combat, son hurlement fait trembler "
+    "le sol comme un séisme. "
+);
+const u8 gMakuhitaPokedexText[] = _(
+    "Il suit un entraînement drastique pour "
+    "devenir encore plus fort. C’est un "
+    "Pokémon plein de volonté, et capable de "
+    "faire face à toutes les attaques. "
+);
+const u8 gHariyamaPokedexText[] = _(
+    "Il aime mesurer sa force à celle des "
+    "plus grands Pokémon. Ses coups de paume "
+    "peuvent projeter un camion. "
+);
+const u8 gAzurillPokedexText[] = _(
+    "Il fait tournoyer sa queue, connue pour "
+    "ses qualités nutritives, pour l’abattre "
+    "comme une puissante massue sur "
+    "l’ennemi. "
+);
+const u8 gNosepassPokedexText[] = _(
+    "Son nez magnétique pointe constamment "
+    "vers le nord. Les voyageurs l’observent "
+    "pour connaître leur position. "
+);
+const u8 gSkittyPokedexText[] = _(
+    "Un Pokémon très mignon qui aime parfois "
+    "courir en cercle en chassant sa propre "
+    "queue. "
+);
+const u8 gDelcattyPokedexText[] = _(
+    "Les femmes Dresseurs raffolent de sa "
+    "sublime fourrure. Il ne possède pas de "
+    "nid. "
+);
+const u8 gSableyePokedexText[] = _(
+    "Ce Pokémon vit dans les grottes "
+    "obscures et mange des gemmes qu’il "
+    "déterre avec ses griffes acérées. "
+);
+const u8 gMawilePokedexText[] = _(
+    "Ses cornes forment une grande mâchoire "
+    "attachée à sa tête. Elle peut broyer "
+    "des barres de fer. "
+);
+const u8 gAronPokedexText[] = _(
+    "L’armure d’acier qui recouvre son corps "
+    "s’émiette quand il évolue pour laisser "
+    "place à une nouvelle. "
+);
+const u8 gLaironPokedexText[] = _(
+    "Pour montrer sa force à ses ennemis, "
+    "Galegon frotte son corps d’acier contre "
+    "les rochers pour produire de "
+    "gigantesques étincelles. "
+);
+const u8 gAggronPokedexText[] = _(
+    "Il creuse des galeries à travers la "
+    "pierre avec ses cornes d’acier pour "
+    "trouver le fer qu’il apprécie. "
+);
+const u8 gMedititePokedexText[] = _(
+    "Il ne mange qu’une Baie par jour. La "
+    "faim lui a forgé une volonté de fer. "
+);
+const u8 gMedichamPokedexText[] = _(
+    "Ses pouvoirs psy, renforcés par la "
+    "pratique du yoga, lui permettent de "
+    "prédire les mouvements ennemis. "
+);
+const u8 gElectrikePokedexText[] = _(
+    "Dynavolt stocke de l’électricité "
+    "statique dans sa fourrure. Il produit "
+    "des étincelles lorsque le temps devient "
+    "orageux. "
+);
+const u8 gManectricPokedexText[] = _(
+    "Il libère l’électricité par sa "
+    "crinière. Il crée un nuage d’orage pour "
+    "appeler la foudre. "
+);
+const u8 gPluslePokedexText[] = _(
+    "Il absorbe l’énergie des poteaux "
+    "électriques et court-circuite son corps "
+    "pour produire du bruit. "
+);
+const u8 gMinunPokedexText[] = _(
+    "Il encourage ses amis. Son corps "
+    "produit plus d’étincelles quand il est "
+    "en mauvaise posture. "
+);
+const u8 gVolbeatPokedexText[] = _(
+    "Il vit aux abords des étangs. La nuit, "
+    "son corps émet de la lumière pour "
+    "communiquer avec d’autres Muciole. "
+);
+const u8 gIllumisePokedexText[] = _(
+    "Il utilise son doux parfum pour aider "
+    "Muciole à décrire des arabesques dans "
+    "le ciel nocturne. "
+);
+const u8 gRoseliaPokedexText[] = _(
+    "Les Rosélia arrosés avec une eau de "
+    "source riche en nutriments prendraient "
+    "des couleurs uniques. "
+);
+const u8 gGulpinPokedexText[] = _(
+    "Il n’y a rien que son estomac ne puisse "
+    "digérer. Pendant sa digestion, il "
+    "laisse s’échapper des gaz très bruyants "
+    "et nauséabonds. "
+);
+const u8 gSwalotPokedexText[] = _(
+    "Il avale tout en une bouchée. Ses sucs "
+    "digestifs peuvent digérer n’importe "
+    "quoi. "
+);
+const u8 gCarvanhaPokedexText[] = _(
+    "Ce Pokémon vit dans les fleuves qui "
+    "traversent les forêts tropicales. Il "
+    "attaque en groupe ceux qui s’aventurent "
+    "sur son territoire. "
+);
+const u8 gSharpedoPokedexText[] = _(
+    "Ce petit voyou fend les mers en se "
+    "propulsant à 120 km/h grâce à son "
+    "postérieur. "
+);
+const u8 gWailmerPokedexText[] = _(
+    "Il mange près d’une tonne de nourriture "
+    "par jour. Jouer avec son jet d’eau est "
+    "son passe-temps favori. "
+);
+const u8 gWailordPokedexText[] = _(
+    "Le plus grand des Pokémon. Il peut "
+    "plonger à une profondeur de 3 000 m en "
+    "retenant son souffle. "
+);
+const u8 gNumelPokedexText[] = _(
+    "Son corps renferme une lave à plus de 1 "
+    "200 °C. Sa bosse se contracte lorsqu’il "
+    "utilise des capacités de type Feu. "
+);
+const u8 gCameruptPokedexText[] = _(
+    "S’il s’énerve, Camérupt fait jaillir de "
+    "la lave en fusion par les bosses qui se "
+    "trouvent sur son dos. Il vit dans les "
+    "cratères des volcans. "
+);
+const u8 gTorkoalPokedexText[] = _(
+    "Il tire son énergie du charbon qu’il "
+    "brûle dans sa carapace et crache de la "
+    "suie noire en cas de danger. "
+);
+const u8 gSpoinkPokedexText[] = _(
+    "Il rebondit sur sa queue pour faire "
+    "battre son cœur. La perle sur sa tête "
+    "vient d’un Coquiperl. "
+);
+const u8 gGrumpigPokedexText[] = _(
+    "Les perles noires amplifient ses "
+    "pouvoirs psy. Sa danse étrange lui "
+    "permet de contrôler ses ennemis. "
+);
+const u8 gSpindaPokedexText[] = _(
+    "La chance que deux Spinda avec les "
+    "mêmes motifs se rencontrent est de "
+    "moins d’une pour quatre milliards. "
+);
+const u8 gTrapinchPokedexText[] = _(
+    "Il creuse puis attend ses proies dans "
+    "son antre, un trou conique dont il est "
+    "impossible de s’échapper. "
+);
+const u8 gVibravaPokedexText[] = _(
+    "Il génère des ondes ultrasoniques en "
+    "battant violemment des ailes. Dès que "
+    "sa proie est inconsciente, il l’arrose "
+    "d’acide pour pouvoir l’avaler. "
+);
+const u8 gFlygonPokedexText[] = _(
+    "On l’appelle « esprit du désert ». Son "
+    "puissant battement d’ailes provoque des "
+    "tempêtes de sable qui le dissimulent. "
+);
+const u8 gCacneaPokedexText[] = _(
+    "Il se sent plus à l’aise dans des "
+    "endroits hostiles comme le désert. Il "
+    "peut survivre 30 jours en utilisant "
+    "seulement l’eau stockée dans son corps. "
+);
+const u8 gCacturnePokedexText[] = _(
+    "Les Cacturne traquent en groupe les "
+    "voyageurs du désert, guettant les "
+    "signes de fatigue pour frapper. "
+);
+const u8 gSwabluPokedexText[] = _(
+    "Il toilette constamment ses ailes "
+    "duveteuses. Il se dépêche de se laver à "
+    "la moindre salissure pour que ses ailes "
+    "restent le plus blanc possible. "
+);
+const u8 gAltariaPokedexText[] = _(
+    "Il vole librement en se cachant dans "
+    "les nuages. Son chant est digne de "
+    "celui de la plus douée des sopranos. "
+);
+const u8 gZangoosePokedexText[] = _(
+    "Son poil se hérisse dès qu’il sent un "
+    "Séviper. Il lacère ses ennemis avec ses "
+    "griffes acérées. "
+);
+const u8 gSeviperPokedexText[] = _(
+    "Il affûte la lame de sa queue sur des "
+    "rochers pour la rendre bien tranchante. "
+    "Le rival de longue date de Mangriff. "
+);
+const u8 gLunatonePokedexText[] = _(
+    "Il a été découvert dans le cratère "
+    "d’une météorite il y a 40 ans. Son "
+    "simple regard endort ses ennemis. "
+);
+const u8 gSolrockPokedexText[] = _(
+    "Solaroc absorbe l’énergie du soleil "
+    "pendant la journée. Toujours "
+    "impassible, il parvient à lire les "
+    "pensées de ses ennemis. "
+);
+const u8 gBarboachPokedexText[] = _(
+    "Ses barbillons font un excellent radar "
+    "qui lui permet de repérer ses proies, "
+    "même en eau trouble. "
+);
+const u8 gWhiscashPokedexText[] = _(
+    "Il fait son nid au fond des marais. Il "
+    "ne se pose pas de questions et avale "
+    "toutes les créatures qui passent près "
+    "de lui. "
+);
+const u8 gCorphishPokedexText[] = _(
+    "Sa nature robuste lui permet de vivre "
+    "sur n’importe quel terrain. Ses pinces "
+    "ne lâchent jamais prise. "
+);
+const u8 gCrawdauntPokedexText[] = _(
+    "C’est un voyou qui utilise ses pinces "
+    "pour chasser les autres Pokémon hors de "
+    "son territoire. "
+);
+const u8 gBaltoyPokedexText[] = _(
+    "Il se déplace en tournoyant sur son "
+    "pied. Ce Pokémon rare fut découvert "
+    "dans de vieilles ruines. "
+);
+const u8 gClaydolPokedexText[] = _(
+    "Une figurine d’argile fabriquée par une "
+    "civilisation vieille de 20 000 ans et "
+    "amenée à la vie. "
+);
+const u8 gLileepPokedexText[] = _(
+    "Il vivait au fond de la mer il y a 100 "
+    "millions d’années. La science a permis "
+    "de le ressusciter. "
+);
+const u8 gCradilyPokedexText[] = _(
+    "Lorsqu’il chasse, Vacilys utilise ses "
+    "huit tentacules. Il dissout sa proie à "
+    "l’aide d’un puissant acide avant de "
+    "l’avaler. "
+);
+const u8 gAnorithPokedexText[] = _(
+    "Un ancêtre Pokémon réanimé à partir "
+    "d’un fossile. Il vivait en mer et "
+    "chassait avec ses pinces. "
+);
+const u8 gArmaldoPokedexText[] = _(
+    "Rien ne peut transpercer la cuirasse "
+    "d’Armaldo. Ce Pokémon embroche ses "
+    "proies avec ses griffes pour les avaler "
+    "plus facilement. "
+);
+const u8 gFeebasPokedexText[] = _(
+    "Son apparence est pathétique. Il forme "
+    "des bancs dans les rivières riches en "
+    "plantes aquatiques. "
+);
+const u8 gMiloticPokedexText[] = _(
+    "Le plus beau Pokémon du monde. De "
+    "nombreuses œuvres d’art représentent "
+    "Milobellus. "
+);
+const u8 gCastformPokedexText[] = _(
+    "Morphéo a la capacité de changer son "
+    "apparence en fonction du temps. Il "
+    "utilise la force de la nature pour "
+    "combattre. "
+);
+const u8 gKecleonPokedexText[] = _(
+    "Il se fond dans son environnement en "
+    "changeant de couleur, mais le motif sur "
+    "son ventre reste le même. "
+);
+const u8 gShuppetPokedexText[] = _(
+    "Il aime le goût de la vengeance. Les "
+    "Pokémon de cette espèce vivent en rangs "
+    "sous les gouttières des gens "
+    "vindicatifs. "
+);
+const u8 gBanettePokedexText[] = _(
+    "Un très violent sentiment de haine a "
+    "transformé une poupée de chiffon en "
+    "Branette. S’il ouvre la bouche, une "
+    "énergie négative s’en échappe. "
+);
+const u8 gDuskullPokedexText[] = _(
+    "On dit que Skelénox emporte les enfants "
+    "désobéissants à la nuit tombée. "
+);
+const u8 gDusclopsPokedexText[] = _(
+    "Son corps est creux. On raconte que "
+    "celui qui regarde à l’intérieur finira "
+    "aspiré par le néant. "
+);
+const u8 gTropiusPokedexText[] = _(
+    "Les succulents fruits de son cou "
+    "poussent deux fois l’an et font le "
+    "régal des enfants des tropiques. "
+);
+const u8 gChimechoPokedexText[] = _(
+    "Il émet des cris à ultrasons et "
+    "chevauche le vent pour parcourir de "
+    "grandes distances. "
+);
+const u8 gWynautPokedexText[] = _(
+    "Il se muscle en bousculant ses "
+    "semblables lors de mêlées. Il raffole "
+    "des fruits sucrés. "
+);
+const u8 gSnoruntPokedexText[] = _(
+    "Selon un vieux dicton des régions "
+    "enneigées : « Stalgamin dans la maison, "
+    "richesse à l’horizon ». "
+);
+const u8 gGlaliePokedexText[] = _(
+    "Il a le pouvoir de geler l’humidité "
+    "ambiante en un instant et peut ainsi "
+    "pétrifier ses proies. "
+);
+const u8 gSphealPokedexText[] = _(
+    "Son corps est couvert d’une douce "
+    "fourrure. Elle le protège du sentiment "
+    "de froid quand il se déplace en roulant "
+    "sur la glace. "
+);
+const u8 gSealeoPokedexText[] = _(
+    "Pour s’amuser, il fait tourner tout ce "
+    "qui est rond sur son museau, qu’il "
+    "s’agisse de Poké Balls ou d’Obalie. "
+);
+const u8 gWalreinPokedexText[] = _(
+    "Ses robustes défenses pulvérisent la "
+    "glace, et son épaisse couche de graisse "
+    "repousse les attaques. "
+);
+const u8 gClamperlPokedexText[] = _(
+    "Ce Pokémon ferme sa coquille pour se "
+    "protéger du danger. Il ne crée qu’une "
+    "seule perle de toute sa vie, mais "
+    "celle-ci est magnifique. "
+);
+const u8 gHuntailPokedexText[] = _(
+    "Il vit loin sous la mer. Il appâte les "
+    "proies crédules avec sa queue qui "
+    "rappelle un petit poisson. "
+);
+const u8 gGorebyssPokedexText[] = _(
+    "Sa façon de se déplacer sous l’eau est "
+    "d’une élégance incomparable. Du bout de "
+    "sa fine bouche, il se nourrit des "
+    "algues qui poussent entre les rochers. "
+);
+const u8 gRelicanthPokedexText[] = _(
+    "Un Pokémon rare aperçu lors d’une "
+    "exploration sous-marine. Il n’a pas "
+    "évolué depuis 100 millions d’années. "
+);
+const u8 gLuvdiscPokedexText[] = _(
+    "Pendant la saison des amours, "
+    "d’innombrables Lovdisc se réunissent "
+    "près des barrières de corail et donnent "
+    "l’impression que la mer est rose. "
+);
+const u8 gBagonPokedexText[] = _(
+    "Il rêve de pouvoir voler un jour. Pour "
+    "l’heure, il s’entraîne en sautant du "
+    "haut des falaises. "
+);
+const u8 gShelgonPokedexText[] = _(
+    "Son corps renforcé repousse toutes les "
+    "attaques. Cependant, le poids important "
+    "de cette armure empêche Drackhaus de se "
+    "déplacer librement. "
+);
+const u8 gSalamencePokedexText[] = _(
+    "Ses colères sont dévastatrices. Il "
+    "s’envole et brûle tout sur son passage. "
+);
+const u8 gBeldumPokedexText[] = _(
+    "Il dialogue avec les siens par "
+    "impulsions magnétiques. En bande, ils "
+    "se déplacent à l’unisson. "
+);
+const u8 gMetangPokedexText[] = _(
+    "Il est formé de deux Terhal soudés. "
+    "Leurs deux cerveaux étant liés, ses "
+    "pouvoirs psychiques sont très "
+    "puissants. "
+);
+const u8 gMetagrossPokedexText[] = _(
+    "Il est né de la fusion de plusieurs "
+    "Métang. Ses quatre cerveaux en font "
+    "l’égal d’un superordinateur. "
+);
+const u8 gRegirockPokedexText[] = _(
+    "Les roches qui composent son corps se "
+    "retrouvent également dans les diverses "
+    "couches terrestres. "
+);
+const u8 gRegicePokedexText[] = _(
+    "Son corps est fait de glace datant de "
+    "l’ère glaciaire. Il contrôle un air "
+    "gelé de -200 °C. "
+);
+const u8 gRegisteelPokedexText[] = _(
+    "Son corps, plus dur que n’importe quel "
+    "métal, serait creux selon les dernières "
+    "analyses scientifiques. "
+);
+const u8 gLatiasPokedexText[] = _(
+    "Latias peut communiquer avec les gens "
+    "par télépathie. Il change son apparence "
+    "en renvoyant la lumière. "
+);
+const u8 gLatiosPokedexText[] = _(
+    "Un Pokémon très intelligent qui "
+    "comprend le langage humain. Il déteste "
+    "se battre. "
+);
+const u8 gKyogrePokedexText[] = _(
+    "On dit qu’il a fait monter les eaux en "
+    "causant des pluies diluviennes. Il "
+    "somnolait dans une fosse marine. "
+);
+const u8 gGroudonPokedexText[] = _( 
+    "Ce Pokémon légendaire incarne la terre. "
+    "Il plongea dans un profond sommeil "
+    "après son combat avec Kyogre. "
+);
+const u8 gRayquazaPokedexText[] = _(
+    "On ne l’a vu pour la première fois que "
+    "très récemment car il vit dans la "
+    "lointaine couche d’ozone. "
+);
+const u8 gJirachiPokedexText[] = _(
+    "On raconte qu’une fois tous les 1 000 "
+    "ans, il a la capacité d’exaucer tous "
+    "les vœux durant une semaine. "
+);
+const u8 gDeoxysPokedexText[] = _(
+    "C’est un virus extraterrestre qui a "
+    "muté en Pokémon. Il apparaît à "
+    "proximité des aurores boréales. "
+);
