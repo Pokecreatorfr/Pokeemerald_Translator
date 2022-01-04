@@ -7,7 +7,7 @@ chosen_language = 'fr'
 Capitalized = True # Boolean
 Capitalized_Desc = False # Boolean
 
-Favorite_Gen_For_Desc = 3 
+Favorite_Version_For_Desc = 1 
 
 Fav_version = 9
 Fav_version2 = 14
@@ -58,6 +58,8 @@ def open_all_csv():
         csvfile.close
 
 def linemaker(text , max_of_line , max_char_by_line):
+    if text == 0 :
+        return ''
     textsplit = text.split()
     list_line = ["" for a in range(max_of_line)]
     line = 0
@@ -84,7 +86,7 @@ def linemaker(text , max_of_line , max_char_by_line):
         if list_line[i] != '':
             valid_line += 1
     for i in range(valid_line):
-            text_final += '    "' + list_line[i] + '"'+ "\n"
+            text_final += '    "' + list_line[i] + '\\n"'+ "\n"
     return text_final
 
 def return_name(txt):
@@ -127,7 +129,16 @@ def trad_desc(english_name , data_list , data_list_for_name , version_id):
                 else:
                     return data_list[i][3]
 
-
+def check_trad_desc_existance(english_name , data_list , data_list_for_name):
+    specie_number = search_number(english_name , data_list_for_name)
+    good_desc = False
+    i = 0
+    while good_desc == False:
+        i += 1
+        if i == len(data_list):
+            return False
+        if int(data_list[i][0]) == specie_number and int(data_list[i][2]) == languages[chosen_language]:
+            return True
 
 def search_number(english_name , list_number):
     gooditem = False
@@ -279,9 +290,18 @@ for i in range(len(pokedex_desc_file)):
     if pokedex_desc_file[i].find('const u8 g') != -1 :
         start = pokedex_desc_file[i].find('const u8 g') + 10
         name = return_name_for_P_desc(pokedex_desc_file[i][start:len(pokedex_desc_file[i])].replace("'", '’'))
-        if trad_desc(name , pokemon_desc , pokemon_names, 24)!= 0:
-            if linemaker(trad_desc(name , pokemon_desc , pokemon_names, 24), 4 , 40) != '':
+        if check_trad_desc_existance(name , pokemon_desc , pokemon_names) == True:
+            if linemaker(trad_desc(name , pokemon_desc , pokemon_names, Favorite_Version_For_Desc), 4 , 40) != '':
                 pokedex_desc_file_Trad.append(pokedex_desc_file[i] + linemaker(trad_desc(name , pokemon_desc , pokemon_names, 24), 4 , 40) + ');')
+            else:
+                for x in range(34):
+                    good_desc = False
+                    if good_desc == False:
+                        if linemaker(trad_desc(name , pokemon_desc , pokemon_names, 34 - x), 4 , 40) != '':
+                            pokedex_desc_file_Trad.append(pokedex_desc_file[i] + linemaker(trad_desc(name , pokemon_desc , pokemon_names, 24), 4 , 40) + ');')
+                            good_desc = True
+                        elif x == 33 and good_desc == False :
+                            errorlist.append([name , i , error_code[1]])
         else:
             errorlist.append([name , i , error_code[1]])
 fichier = open("pokedex_text_trad.h" , 'w' , encoding="UTF-8")
