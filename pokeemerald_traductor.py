@@ -68,12 +68,12 @@ def linemaker(text , max_of_line , max_char_by_line):
     valid_line = 0
     text_final = ''
     if len(text)/max_char_by_line > max_of_line:
-        print('error')
+        #print('error')
         return ''
     while end == False:
 
         if line == max_of_line:
-            print('error')
+            #print('error')
             return ''
         elif word == len(textsplit):
             end = True
@@ -153,7 +153,7 @@ def search_number(english_name , list_number):
 
 open_all_csv()
 
-print(trad_desc('Pikachu' , pokemon_desc , pokemon_names , 9))
+#print(trad_desc('Pikachu' , pokemon_desc , pokemon_names , 9))
 
 ## Trad nom item
 a_file = open("items.h" , encoding="UTF-8")
@@ -286,16 +286,16 @@ for line in lines:
 a_file.close()
 errorlist = []
 for i in range(len(pokedex_desc_file)):
-    print(pokedex_desc_file[i].find('const u8 g') != -1)
+    #print(pokedex_desc_file[i].find('const u8 g') != -1)
     if pokedex_desc_file[i].find('const u8 g') != -1 :
         start = pokedex_desc_file[i].find('const u8 g') + 10
         name = return_name_for_P_desc(pokedex_desc_file[i][start:len(pokedex_desc_file[i])].replace("'", '’'))
         if check_trad_desc_existance(name , pokemon_desc , pokemon_names) == True:
             if linemaker(trad_desc(name , pokemon_desc , pokemon_names, Favorite_Version_For_Desc), 4 , 40) != '':
-                pokedex_desc_file_Trad.append(pokedex_desc_file[i] + linemaker(trad_desc(name , pokemon_desc , pokemon_names, 24), 4 , 40) + ');')
+                pokedex_desc_file_Trad.append(pokedex_desc_file[i] + linemaker(trad_desc(name , pokemon_desc , pokemon_names, Favorite_Version_For_Desc), 4 , 40) + ');')
             else:
+                good_desc = False
                 for x in range(34):
-                    good_desc = False
                     if good_desc == False:
                         if linemaker(trad_desc(name , pokemon_desc , pokemon_names, 34 - x), 4 , 40) != '':
                             pokedex_desc_file_Trad.append(pokedex_desc_file[i] + linemaker(trad_desc(name , pokemon_desc , pokemon_names, 24), 4 , 40) + ');')
