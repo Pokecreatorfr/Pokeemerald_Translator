@@ -7,7 +7,7 @@ chosen_language = 'fr'
 Capitalized = True # Boolean
 Capitalized_Desc = False # Boolean
 
-Favorite_Version_For_Desc = 1 
+Favorite_Version_For_Desc = 22 
 
 Fav_version = 9
 Fav_version2 = 14
