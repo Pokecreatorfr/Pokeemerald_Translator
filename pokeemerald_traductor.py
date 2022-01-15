@@ -169,12 +169,12 @@ for i in range(len(item_names_file)):
         name = return_name(item_names_file[i][start:len(item_names_file[i])].replace("'", '’'))
         #print(trad_item__name(name) , name)
         if trad_name(name , item_names) != 0:
-            item_names_file[i] = item_names_file[i][0:start] + trad_name(name , item_names) + '"),'
+            item_names_file[i] = item_names_file[i][0:start] + trad_name(name , item_names) + '"),' + "\n"
         else:
             errorlist.append([name , i])
 fichier = open("items_trad.h" , 'w' , encoding="UTF-8")
 for line in item_names_file:
-    fichier.write((line + "\n"))
+    fichier.write(line )
 fichier.close()
 fichier = open("error_item.txt" , 'w' , encoding="UTF-8")
 for line in errorlist:
