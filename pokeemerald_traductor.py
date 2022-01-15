@@ -218,12 +218,12 @@ for i in range(len(abilities_names_file)):
             name = return_name(abilities_names_file[i][start:len(abilities_names_file[i])].replace("'", '’'))
             #print(trad_ability_name(name) , name)
             if trad_name(name , ability_names) != 0:
-                abilities_names_file[i] = abilities_names_file[i][0:start] + trad_name(name , ability_names) + '"),'
+                abilities_names_file[i] = abilities_names_file[i][0:start] + trad_name(name , ability_names) + '"),' + "\n"
             else:
                 errorlist.append([name , i])
 fichier = open("abilities_trad.h" , 'w' , encoding="UTF-8")
 for line in abilities_names_file:
-    fichier.write((line + "\n"))
+    fichier.write((line ))
 fichier.close()
 fichier = open("error_abilities.txt" , 'w' , encoding="UTF-8")
 for line in errorlist:
