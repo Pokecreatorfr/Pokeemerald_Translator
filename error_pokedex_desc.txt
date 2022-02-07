@@ -1,6 +1,1 @@
 Error with the name :  "Dummy"  on line 0   Unknown name 
-Error with the name :  "NidoranF"  on line 174   Unknown name 
-Error with the name :  "NidoranM"  on line 192   Unknown name 
-Error with the name :  "Farfetchd"  on line 498   Unknown name 
-Error with the name :  "Mrmime"  on line 732   Unknown name 
-Error with the name :  "HoOh"  on line 1500   Unknown name 
