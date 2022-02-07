@@ -141,6 +141,11 @@ const u8 gSandslashPokedexText[] = _(
     "s’il est menacé. Il peut ainsi s’enfuir \n"
     "ou attaquer. \n"
 );
+const u8 gNidoranFPokedexText[] = _(
+    "Petit et docile, il se protège avec sa \n"
+    "minuscule corne empoisonnée lorsqu’il \n"
+    "est attaqué. \n"
+);
 const u8 gNidorinaPokedexText[] = _(
     "Pour nourrir ses petits, il mâche les \n"
     "aliments pour les rendre tendres et il \n"
@@ -151,6 +156,12 @@ const u8 gNidoqueenPokedexText[] = _(
     "forme de pointes. Quand ce Pokémon \n"
     "s’énerve, ses pointes se dressent de \n"
     "façon menaçante. \n"
+);
+const u8 gNidoranMPokedexText[] = _(
+    "Ce Pokémon agite ses oreilles comme \n"
+    "pour entendre tout ce qui se passe au \n"
+    "loin. Il déploie des aiguillons \n"
+    "toxiques quand il est en colère. \n"
 );
 const u8 gNidorinoPokedexText[] = _(
     "Très agressif, il est prompt à répondre \n"
@@ -412,6 +423,11 @@ const u8 gMagnetonPokedexText[] = _(
     "présence augmente la température de 1 \n"
     "°C dans un rayon de 1 000 m. \n"
 );
+const u8 gFarfetchdPokedexText[] = _(
+    "Ce Pokémon se promène toujours en \n"
+    "tenant un légume. Il l’utilise pour \n"
+    "faire son nid. \n"
+);
 const u8 gDoduoPokedexText[] = _(
     "Ses deux cerveaux semblent communiquer \n"
     "leurs émotions grâce à un lien \n"
@@ -606,6 +622,11 @@ const u8 gStarmiePokedexText[] = _(
     "Un noyau rouge trône en son centre. Il \n"
     "envoie des signaux radio mystérieux \n"
     "vers le ciel nocturne. \n"
+);
+const u8 gMrmimePokedexText[] = _(
+    "Il adore imiter les gens. On le dit \n"
+    "capable de créer de véritables murs \n"
+    "juste en les mimant. \n"
 );
 const u8 gScytherPokedexText[] = _(
     "Il fauche les herbes avec ses lames \n"
@@ -1238,6 +1259,11 @@ const u8 gLugiaPokedexText[] = _(
     "Il est supposé être le gardien des sept \n"
     "mers. On raconte qu’il est apparu une \n"
     "nuit de forte tempête. \n"
+);
+const u8 gHoOhPokedexText[] = _(
+    "Il ne se montre qu’à un Dresseur au \n"
+    "cœur pur en dévoilant ses magnifiques \n"
+    "ailes colorées. \n"
 );
 const u8 gCelebiPokedexText[] = _(
     "Il a le pouvoir de voyager dans le \n"
