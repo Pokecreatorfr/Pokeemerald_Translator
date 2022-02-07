@@ -137,7 +137,7 @@ def check_trad_desc_existance(english_name , data_list , data_list_for_name):
         i += 1
         if i == len(data_list):
             return False
-        if int(data_list[i][0]) == specie_number and int(data_list[i][2]) == languages[chosen_language]:
+        elif int(data_list[i][0]) == specie_number and int(data_list[i][2]) == languages[chosen_language]:
             return True
 
 def search_number(english_name , list_number):
@@ -289,7 +289,7 @@ for i in range(len(pokedex_desc_file)):
     #print(pokedex_desc_file[i].find('const u8 g') != -1)
     if pokedex_desc_file[i].find('const u8 g') != -1 :
         start = pokedex_desc_file[i].find('const u8 g') + 10
-        name = return_name_for_P_desc(pokedex_desc_file[i][start:len(pokedex_desc_file[i])].replace("'", '’'))
+        name = return_name_for_P_desc(pokedex_desc_file[i][start:len(pokedex_desc_file[i])].replace("'", '’').replace("HoOh", 'Ho-Oh').replace("Mrmime", 'MR. MIME').replace("Farfetchd", 'Farfetch’d').replace("NidoranM", 'Nidoran♂').replace("NidoranF", 'Nidoran♀'))
         if check_trad_desc_existance(name , pokemon_desc , pokemon_names) == True:
             if linemaker(trad_desc(name , pokemon_desc , pokemon_names, Favorite_Version_For_Desc), 4 , 40) != '':
                 pokedex_desc_file_Trad.append(pokedex_desc_file[i] + linemaker(trad_desc(name , pokemon_desc , pokemon_names, Favorite_Version_For_Desc), 4 , 40) + ');')
