@@ -311,3 +311,6 @@ fichier.close()
 fichier = open("error_pokedex_desc.txt" , 'w' , encoding="UTF-8")
 for line in errorlist:
     fichier.write('Error with the name :  "'+ line[0] +'"  on line ' + str(line[1]) + '   ' + line[2] + "\n")
+
+# Trad item desc
+# A faire , trouver les definition en français pour chaque gen , ou les scrapper 
